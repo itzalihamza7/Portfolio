@@ -18,4 +18,3 @@
 - [baseui](https://github.com/uber/baseweb)
 - [react-reveal](https://www.react-reveal.com/)
 - [styled-components](https://styled-components.com/)
-
