@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private":false,
   "name": "Portfolio",
   "homepage": "https://github.com/itzalihamza7/Portfolio",
   "version": "1.0.0",
