@@ -207,7 +207,7 @@ const skills = {
       skills: [
         "⚡ Experience working in Cryptography",
         "⚡ Experience in penetration testing",
-        "⚡ Experience in Web Vulneribility checking",
+        "⚡ Experience in Web vulnerability checking",
       ],
       softwareSkills: [
         {
@@ -295,7 +295,7 @@ const degrees = {
       duration: "2016 - 2018",
       descriptions: [
          "⚡ Studied the basics of Engineering Subjects and developed my interest in computer science ",
-        "⚡ Lead my college as athlete and was alos active in other co-curricular activities ",
+        "⚡ Lead my college as athlete and was also active in other co-curricular activities ",
       ],
       website_link: "https://pgc.edu/",
     },
@@ -348,7 +348,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "I have done Internships and jobs in feild of computer science and have experience of an year. I have been a active freelancer and developed many projects for clients. I am looking forward to use my skills in this feild.",
+    "I have done Internships and jobs in field of computer science and have experience of an year. I have been a active freelancer and developed many projects for clients. I am looking forward to use my skills in this field.",
   header_image_path: "experience.svg",
   sections: [
     {
