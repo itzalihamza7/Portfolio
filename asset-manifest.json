@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/itzalihamza7/Portfolio/static/css/main.e3881152.chunk.css",
-    "main.js": "/itzalihamza7/Portfolio/static/js/main.26633611.chunk.js",
-    "main.js.map": "/itzalihamza7/Portfolio/static/js/main.26633611.chunk.js.map",
+    "main.js": "/itzalihamza7/Portfolio/static/js/main.2c755767.chunk.js",
+    "main.js.map": "/itzalihamza7/Portfolio/static/js/main.2c755767.chunk.js.map",
     "runtime-main.js": "/itzalihamza7/Portfolio/static/js/runtime-main.bfd9a586.js",
     "runtime-main.js.map": "/itzalihamza7/Portfolio/static/js/runtime-main.bfd9a586.js.map",
-    "static/js/2.1b3e018e.chunk.js": "/itzalihamza7/Portfolio/static/js/2.1b3e018e.chunk.js",
-    "static/js/2.1b3e018e.chunk.js.map": "/itzalihamza7/Portfolio/static/js/2.1b3e018e.chunk.js.map",
+    "static/js/2.b10b2231.chunk.js": "/itzalihamza7/Portfolio/static/js/2.b10b2231.chunk.js",
+    "static/js/2.b10b2231.chunk.js.map": "/itzalihamza7/Portfolio/static/js/2.b10b2231.chunk.js.map",
     "index.html": "/itzalihamza7/Portfolio/index.html",
-    "precache-manifest.578dcfd692662b37e3815e36514055da.js": "/itzalihamza7/Portfolio/precache-manifest.578dcfd692662b37e3815e36514055da.js",
+    "precache-manifest.9d98388d0496e76e90277f16a57e7bb4.js": "/itzalihamza7/Portfolio/precache-manifest.9d98388d0496e76e90277f16a57e7bb4.js",
     "service-worker.js": "/itzalihamza7/Portfolio/service-worker.js",
     "static/css/main.e3881152.chunk.css.map": "/itzalihamza7/Portfolio/static/css/main.e3881152.chunk.css.map",
-    "static/js/2.1b3e018e.chunk.js.LICENSE.txt": "/itzalihamza7/Portfolio/static/js/2.1b3e018e.chunk.js.LICENSE.txt",
+    "static/js/2.b10b2231.chunk.js.LICENSE.txt": "/itzalihamza7/Portfolio/static/js/2.b10b2231.chunk.js.LICENSE.txt",
     "static/media/index.css": "/itzalihamza7/Portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/ali.jpg": "/itzalihamza7/Portfolio/static/media/ali.1532ffbb.jpg",
     "static/media/bauddhikgeeks-transparent.png": "/itzalihamza7/Portfolio/static/media/bauddhikgeeks-transparent.074c759b.png",
@@ -25,7 +25,6 @@
     "static/media/github.png": "/itzalihamza7/Portfolio/static/media/github.0ba2aa20.png",
     "static/media/googleAssistant.jpg": "/itzalihamza7/Portfolio/static/media/googleAssistant.0c8a4c11.jpg",
     "static/media/hackathon1.svg": "/itzalihamza7/Portfolio/static/media/hackathon1.7a2dbf7a.svg",
-    "static/media/harikrushn.jpg": "/itzalihamza7/Portfolio/static/media/harikrushn.823352fd.jpg",
     "static/media/iit.png": "/itzalihamza7/Portfolio/static/media/iit.36d7942a.png",
     "static/media/ino.png": "/itzalihamza7/Portfolio/static/media/ino.ccf88661.png",
     "static/media/localguide.gif": "/itzalihamza7/Portfolio/static/media/localguide.847873a8.gif",
@@ -44,8 +43,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bfd9a586.js",
-    "static/js/2.1b3e018e.chunk.js",
+    "static/js/2.b10b2231.chunk.js",
     "static/css/main.e3881152.chunk.css",
-    "static/js/main.26633611.chunk.js"
+    "static/js/main.2c755767.chunk.js"
   ]
 }
