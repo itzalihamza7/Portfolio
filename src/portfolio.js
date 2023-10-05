@@ -83,7 +83,7 @@ const skills = {
         },
         {
           skillName: "NodeJS",
-          fontAwesomeClassname: "simple-icons:node-dot-js",
+          fontAwesomeClassname: "simple-icons:nodedotjs",
           style: {
             color: "#339933",
           },
@@ -116,16 +116,10 @@ const skills = {
         //     color: "#3DDC84",
         //   },
         // },
-        {
-          skillName: "Java",
-          fontAwesomeClassname: "simple-icons:java",
-          style: {
-            color: "#f89820",
-          },
-        },
+
         {
           skillName: "ROR",
-          fontAwesomeClassname: "simple-icons:rails",
+          fontAwesomeClassname: "simple-icons:rubyonrails",
           style: {
             color: "#02569B",
           },
@@ -227,7 +221,7 @@ const skills = {
         },
         {
           skillName: "Tor",
-          fontAwesomeClassname: "simple-icons:tor",
+          fontAwesomeClassname: "simple-icons:torproject",
           style: {
             color: "#6863A6",
           },
