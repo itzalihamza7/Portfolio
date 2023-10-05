@@ -14,7 +14,8 @@ const greeting = {
   logo_name: "ali.h()",
   nickname: "ali",
   full_name: "Ali Hamza",
-  subTitle: "Full Stack Developer, Cyber Security Enthusiast 🔥. Always learning.",
+  subTitle:
+    "Full Stack Developer, Cyber Security Enthusiast 🔥. Always learning.",
   resumeLink:
     "https://drive.google.com/file/d/18QHdyWF_UfbAEY650wUjHBj0sAfinJPk/view?usp=share_link",
   mail: "alihamzaali44@gmail.com",
@@ -284,7 +285,7 @@ const degrees = {
         "⚡ I completed various online courses for Backend , Web , Mobile App Development, etc.",
         "⚡ Always keen to do the practical work and showed great interest in all the semester projects.",
         "⚡ Took part in many events, societies, co-curricular activities and  Won many tournaments being captain of the Football Team at NUST",
-       ],
+      ],
       website_link: "https://nust.edu.pk/",
     },
     {
@@ -356,6 +357,25 @@ const experience = {
       experiences: [
         {
           title: "Associate Software Developer",
+          company: "Veroke",
+          company_url: "https://www.veroke.com/",
+          logo_path: "veroke.png",
+          duration: "Jul 2023 - present",
+          location: "Islamabad, Pakistan",
+          description: `
+          • Engineered robust and scalable Full Stack solutions using ROR and ReactJs, enabling the company to stay ahead in a fiercely competitive market.
+          • Championed the expansion of our client base, delivering bespoke solutions to esteemed US-based clientele, and solidifying our reputation as a trusted technology partner.
+          • Made a significant impact by optimizing and enhancing production-level code for seamless integration with Shopify and Big Commerce, resulting in increased efficiency and profitability.
+          • Designed captivating user interfaces using React Js and Bootstrap, ensuring exceptional user experiences that captivated and retained a broad audience.
+          • Collaborated closely with cross-functional QA teams to implement comprehensive testing strategies, guaranteeing the highest quality software releases.
+          • Garnered consistent recognition for a strong aptitude for problem-solving and analytical thinking, earning the trust of key stakeholders.
+          • Orchestrated a groundbreaking project that served a staggering 5 million users, revolutionizing the way they interacted with our platform, and setting new industry standards in user engagement and satisfaction.
+          
+          `,
+          color: "#0071C5",
+        },
+        {
+          title: "Associate Software Developer",
           company: "Devsinc",
           company_url: "https://devsinc.com/",
           logo_path: "devsinc.jpeg",
@@ -370,7 +390,7 @@ const experience = {
           • Consistently recognized for excellent problem solving and analytical skills by stakeholders.
           
           `,
-            color: "#0071C5",
+          color: "#0071C5",
         },
         {
           title: "Networks Engineer (Intern)",
@@ -381,14 +401,13 @@ const experience = {
           location: "Islamabad, Pakistan",
           description: `• Worked under network security administrator monitoring company's network 
           • Developed an excel based network maintenance application.     `,
-              color: "#0071C5",
+          color: "#0071C5",
         },
       ],
     },
     {
       title: "Volunteerships",
       experiences: [
-       
         {
           title: "GDG Student Volunteer",
           company: "Google Developer Groups",
@@ -479,8 +498,7 @@ const projects = {
       id: "1",
       name: "UI Radiance",
       url: "https://github.com/itzalihamza7/UIRadiance",
-      description:
-        "An app to test the UI skills",
+      description: "An app to test the UI skills",
       languages: [
         {
           name: "HTML5",
@@ -525,8 +543,7 @@ const projects = {
       id: "2",
       name: "Ecommerece Store",
       url: "https://github.com/itzalihamza7/Ecommerece",
-      description:
-        "An Ecommerece store app to sell and buy products",
+      description: "An Ecommerece store app to sell and buy products",
       languages: [
         {
           name: "Rails",
@@ -565,10 +582,53 @@ const projects = {
     },
     {
       id: "4",
+      name: "NFT Staking APP",
+      url: "https://github.com/itzalihamza7/NFT-Staking-APP",
+      description: "An app to stake the NFts",
+      languages: [
+        {
+          name: "Etherium",
+          iconifyClass: "logos-ethereum",
+        },
+        {
+          name: "React",
+          iconifyClass: "logos-react",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "Social Media Memories",
+      url: "https://github.com/itzalihamza7/social-media-memories",
+      description: "An app to store the memories online",
+      languages: [
+        {
+          name: "JavaScript",
+          iconifyClass: "logos-javascript",
+        },
+        {
+          name: "HTML5",
+          iconifyClass: "vscode-icons:file-type-html",
+        },
+        {
+          name: "CSS3",
+          iconifyClass: "vscode-icons:file-type-css",
+        },
+        {
+          name: "Bootstrap",
+          iconifyClass: "logos-bootstrap",
+        },
+        {
+          name: "React",
+          iconifyClass: "logos-react",
+        },
+      ],
+    },
+    {
+      id: "4",
       name: "personal-portfolio",
       url: "https://github.com/itzalihamza7/Portfolio",
-      description:
-        "An app to show my portfolio",
+      description: "An app to show my portfolio",
       languages: [
         {
           name: "JavaScript",

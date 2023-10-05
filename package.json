@@ -1,14 +1,14 @@
 {
-  "private":false,
+  "private": false,
   "name": "Portfolio",
-  "homepage": "https://github.com/itzalihamza7/Portfolio",
   "version": "1.0.0",
+  "homepage": "https://github.com/itzalihamza7/Portfolio",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
-    "start": "react-scripts start",
+    "start": "react-scripts  start",
     "test": "react-scripts test"
   },
   "dependencies": {
