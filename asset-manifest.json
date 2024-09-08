@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.c4d63548.chunk.css",
-    "main.js": "/Portfolio/static/js/main.ab10d346.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.ab10d346.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.0a275c03.chunk.css",
+    "main.js": "/Portfolio/static/js/main.dd429350.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.dd429350.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.1e984aad.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.1e984aad.js.map",
-    "static/js/2.48d2701a.chunk.js": "/Portfolio/static/js/2.48d2701a.chunk.js",
-    "static/js/2.48d2701a.chunk.js.map": "/Portfolio/static/js/2.48d2701a.chunk.js.map",
+    "static/js/2.7882b02a.chunk.js": "/Portfolio/static/js/2.7882b02a.chunk.js",
+    "static/js/2.7882b02a.chunk.js.map": "/Portfolio/static/js/2.7882b02a.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "precache-manifest.ba0d04e5e65f9c325b7c701d394294c8.js": "/Portfolio/precache-manifest.ba0d04e5e65f9c325b7c701d394294c8.js",
+    "precache-manifest.bb7a3c6abdcf73cd57df9f3fe6550047.js": "/Portfolio/precache-manifest.bb7a3c6abdcf73cd57df9f3fe6550047.js",
     "service-worker.js": "/Portfolio/service-worker.js",
-    "static/css/main.c4d63548.chunk.css.map": "/Portfolio/static/css/main.c4d63548.chunk.css.map",
-    "static/js/2.48d2701a.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.48d2701a.chunk.js.LICENSE.txt",
+    "static/css/main.0a275c03.chunk.css.map": "/Portfolio/static/css/main.0a275c03.chunk.css.map",
+    "static/js/2.7882b02a.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.7882b02a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Portfolio/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/ali.jpg": "/Portfolio/static/media/ali.1532ffbb.jpg",
     "static/media/bauddhikgeeks-transparent.png": "/Portfolio/static/media/bauddhikgeeks-transparent.074c759b.png",
@@ -37,14 +37,15 @@
     "static/media/pgc.png": "/Portfolio/static/media/pgc.76fcc932.png",
     "static/media/postman.jpg": "/Portfolio/static/media/postman.22f11067.jpg",
     "static/media/postman.png": "/Portfolio/static/media/postman.c108f557.png",
+    "static/media/quietlab..png": "/Portfolio/static/media/quietlab..f273630e.png",
     "static/media/skillenza.png": "/Portfolio/static/media/skillenza.7b7a76ef.png",
     "static/media/valora.jpg": "/Portfolio/static/media/valora.246ad3ed.jpg",
     "static/media/wrighter.jpg": "/Portfolio/static/media/wrighter.02fdae43.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1e984aad.js",
-    "static/js/2.48d2701a.chunk.js",
-    "static/css/main.c4d63548.chunk.css",
-    "static/js/main.ab10d346.chunk.js"
+    "static/js/2.7882b02a.chunk.js",
+    "static/css/main.0a275c03.chunk.css",
+    "static/js/main.dd429350.chunk.js"
   ]
 }
