@@ -17,7 +17,7 @@ const greeting = {
   subTitle:
     "Full Stack Developer, Cyber Security Enthusiast 🔥. Always learning.",
   resumeLink:
-    "https://drive.google.com/file/d/18QHdyWF_UfbAEY650wUjHBj0sAfinJPk/view?usp=share_link",
+    "https://drive.google.com/file/d/1hG9dJq9mMu34jKHnk6K8a1zluEetfK4J/view?usp=sharing",
   mail: "alihamzaali44@gmail.com",
 };
 
@@ -349,6 +349,29 @@ const experience = {
     {
       title: "Work Experience",
       experiences: [
+
+        {
+          title: "Full Stack Developer",
+          company: "QuietLab",
+          company_url: "https://tryquietlab.com/",
+          logo_path: "quietlab..png",
+          duration: "Jul 2024 - present",
+          location: "Remote",
+          description: `
+          • Drove the global expansion of QuietLab, facilitating the migration from Shopify to Checkout Champ to
+            optimize operations.
+          • Implemented comprehensive event tracking with Google Analytics and Facebook Pixels, refining
+            marketing strategies through data-driven insights.
+          • Engineered custom payment integrations and high-conversion funnels, boosting overall revenue.
+          • Executed A/B testing to enhance user engagement and conversion rates.
+          • Managed the end-to-end development process, ensuring seamless delivery across multiple project facets.
+          • Tools & Technologies: React.js, Nodejs, Shopify, Checkout Champ, Google Analytics, Facebook Pixels,
+            AWS, Ansible, Bootstrap, Jquery, Microsoft Clarity.
+          `,
+          color: "#0071C5",
+        },
+        
+      
         {
           title: "Associate Software Developer",
           company: "Veroke",
