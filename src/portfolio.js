@@ -11,20 +11,20 @@ const settings = {
 const greeting = {
   title: "Hello 👋.",
   title2: "Ali",
-  logo_name: "ali.h()",
+  logo_name: "ali.hamza()",
   nickname: "ali",
   full_name: "Ali Hamza",
   subTitle:
-    "Full Stack Developer, Cyber Security Enthusiast 🔥. Always learning.",
+    "Full Stack Developer, GEN AI and Data Science Enthusiast 🔥. Always learning.",
   resumeLink:
-    "https://drive.google.com/file/d/1hG9dJq9mMu34jKHnk6K8a1zluEetfK4J/view?usp=sharing",
+    "https://drive.google.com/file/d/1Te5n9U9qKroEnyLnHM8iaya9jqHCWFVB/view?usp=sharing",
   mail: "alihamzaali44@gmail.com",
 };
 
 const socialMediaLinks = {
   /* Your Social Media Link */
   github: "https://github.com/itzalihamza7",
-  linkedin: "https://www.linkedin.com/in/ali-hamza-613714177/",
+  linkedin: "https://www.linkedin.com/in/alihamza1234/",
   gmail: "alihamzaali44@gmail.com",
   gitlab: "https://gitlab.com/",
   facebook: "https://www.facebook.com/alihamzaali44?mibextid=ZbWKwL",
@@ -38,11 +38,11 @@ const skills = {
       title: "Full Stack Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
-        "⚡ Building responsive website front end using ReactJS and HTML/CSS",
-        "⚡ Developing mobile applications using React Native",
-        "⚡ Creating application backend in Node, Express & Rails",
-        "⚡ Integration of third party services such as Firebase",
+        "⚡ Built and deployed 10+ interactive full-stack applications using MERN and Ruby on Rails, enhancing scalability and performance",
+        "⚡ Designed responsive and high-performance front ends with React.js and HTML/CSS, improving load times by up to 40%",
+        "⚡ Created and maintained secure REST APIs using Node.js, Express, and Rails with JWT/OAuth for 5M+ user systems",
+        "⚡ Integrated AI features like personalized recommendations, boosting user engagement by 35% across projects",
+        "⚡ Automated CI/CD pipelines using AWS, Ansible, and Terraform, reducing deployment and provisioning time by up to 75%",
       ],
       softwareSkills: [
         {
@@ -174,56 +174,10 @@ const skills = {
           },
         },
         {
-          skillName: "C",
-          fontAwesomeClassname: "simple-icons:c",
+          skillName: "Git",
+          fontAwesomeClassname: "simple-icons:git",
           style: {
-            color: "#E94E32",
-          },
-        },
-        {
-          skillName: "C++",
-          fontAwesomeClassname: "simple-icons:cplusplus",
-          style: {
-            color: "#E94E32",
-          },
-        },
-        {
-          skillName: "Python",
-          fontAwesomeClassname: "simple-icons:python",
-          style: {
-            color: "#3776AB",
-          },
-        },
-      ],
-    },
-    {
-      title: "Cybersecurity",
-      fileName: "CloudInfraImg",
-      skills: [
-        "⚡ Experience working in Cryptography",
-        "⚡ Experience in penetration testing",
-        "⚡ Experience in Web Vulnerability checking",
-      ],
-      softwareSkills: [
-        {
-          skillName: "KALI Linux",
-          fontAwesomeClassname: "simple-icons:kalilinux",
-          style: {
-            color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Wireshark",
-          fontAwesomeClassname: "simple-icons:wireshark",
-          style: {
-            color: "#38AFBB",
-          },
-        },
-        {
-          skillName: "Tor",
-          fontAwesomeClassname: "simple-icons:torproject",
-          style: {
-            color: "#6863A6",
+            color: "#F05032",
           },
         },
         {
@@ -234,33 +188,294 @@ const skills = {
           },
         },
         {
-          skillName: "SQL",
-          fontAwesomeClassname: "simple-icons:mysql",
+          skillName: "Shopify",
+          fontAwesomeClassname: "simple-icons:shopify",
           style: {
-            color: "#336791",
+            color: "#96BF48",
           },
         },
         {
-          skillName: "Etherium",
-          fontAwesomeClassname: "simple-icons:ethereum",
+          skillName: "Big Commerce",
+          fontAwesomeClassname: "simple-icons:bigcommerce",
           style: {
-            color: "#47A248",
+            color: "#00A3E0",
+          },
+        },
+        {
+          skillName: "Bootstrap",
+          fontAwesomeClassname: "simple-icons:bootstrap",
+          style: {
+            color: "#563D7C",
+          },
+        },
+        {
+          skillName: "Tailwind CSS",
+          fontAwesomeClassname: "simple-icons:tailwindcss",
+          style: {
+            color: "#38B2AC",
+          },
+        },
+        //aws
+        {
+          skillName: "AWS",
+          fontAwesomeClassname: "simple-icons:amazonaws",
+          style: {
+            color: "#FF9900",
+          },
+        },
+        {
+          skillName: "Ansible",
+          fontAwesomeClassname: "simple-icons:ansible",
+          style: {
+            color: "#FF9900",
           },
         },
         {
           skillName: "Docker",
           fontAwesomeClassname: "simple-icons:docker",
           style: {
+            color: "#2496ED",
+          },
+        },
+        {
+          skillName: "Kubernetes",
+          fontAwesomeClassname: "simple-icons:kubernetes",
+          style: {
+            color: "#326CE5",
+          },
+        },
+        {
+          skillName: "Figma",
+          fontAwesomeClassname: "simple-icons:figma",
+          style: {
+            color: "#F24E1E",
+          },
+        },
+        {
+          skillName: "Adobe XD",
+          fontAwesomeClassname: "simple-icons:adobexd",
+          style: {
+            color: "#FF61F6",
+          },
+        },
+        {
+          skillName: "Canva",
+          fontAwesomeClassname: "simple-icons:canva",
+          style: {
+            color: "#00C4CC",
+          },
+        },
+        //nodejs
+        {
+          skillName: "ExpressJS",
+          fontAwesomeClassname: "simple-icons:express",
+          style: {
+            color: "#000000",
+          },
+        },
+        {
+          skillName: "Heroku",
+          fontAwesomeClassname: "simple-icons:heroku",
+          style: {
+            color: "#430098",
+          },
+        },
+        {
+          skillName: "Vercel",
+          fontAwesomeClassname: "simple-icons:vercel",
+          style: {
+            color: "#000000",
+          },
+        },
+        {
+          skillName: "Netlify",
+          fontAwesomeClassname: "simple-icons:netlify",
+          style: {
+            color: "#00C4CC",
+          },
+        },
+        //react
+        {
+          skillName: "NextJS",
+          fontAwesomeClassname: "simple-icons:nextdotjs",
+          style: {
+            color: "#000000",
+          },
+        },
+        {
+          skillName: "Redux",
+          fontAwesomeClassname: "simple-icons:redux",
+          style: {
+            color: "#764ABC",
+          },
+        },
+        {
+          skillName: "Material UI",
+          fontAwesomeClassname: "simple-icons:mui",
+          style: {
+            color: "#007FFF",
+          },
+        },
+        
+      ],
+    },
+    {
+      title: "AI & ML and Data Science",
+      fileName: "DataScienceImg",
+      skills: [
+        "⚡ Developed and deployed multiple AI/ML models using TensorFlow and PyTorch for real-world applications",
+        "⚡ Built and fine-tuned Generative AI models for content creation and automation tasks",
+        "⚡ Designed and implemented intelligent chatbots using NLP and transformer-based models (e.g., GPT, BERT)",
+        "⚡ Delivered end-to-end Data Science projects including preprocessing, model training, and evaluation",
+        "⚡ Performed advanced Data Analysis using Pandas, NumPy, and Scikit-learn on large-scale datasets",
+        "⚡ Created interactive Data Visualizations with Matplotlib, Seaborn, and Plotly to drive insights",
+        "⚡ Engineered AI-powered solutions to automate tasks and enhance decision-making in web applications",
+        "⚡ Integrated AI capabilities into full-stack web apps, increasing personalization and efficiency by 30%+",
+      ]
+      ,
+      softwareSkills: [
+        {
+          skillName: "Python",
+          fontAwesomeClassname: "simple-icons:python",
+          style: {
+            color: "#FF9900",
+          },
+        },
+        {
+          skillName: "Tensorflow",
+          fontAwesomeClassname: "simple-icons:tensorflow",
+          style: {
+            color: "#38AFBB",
+          },
+        },
+        {
+          skillName: "Keras",
+          fontAwesomeClassname: "simple-icons:keras",
+          style: {
+            color: "#6863A6",
+          },
+        },
+        {
+          skillName: "Pytorch",
+          fontAwesomeClassname: "simple-icons:pytorch",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "OpenCV",
+          fontAwesomeClassname: "simple-icons:opencv",
+          style: {
+            color: "#336791",
+          },
+        },
+        {
+          skillName: "Pandas",
+          fontAwesomeClassname: "simple-icons:pandas",
+          style: {
             color: "#1488C6",
           },
         },
         {
-          skillName: "GitHub Actions",
-          fontAwesomeClassname: "simple-icons:githubactions",
+          skillName: "NumPy",
+          fontAwesomeClassname: "simple-icons:numpy",
           style: {
             color: "#5b77ef",
           },
         },
+        {
+          skillName: "Scikit Learn",
+          fontAwesomeClassname: "simple-icons:scikitlearn",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Flask",
+          fontAwesomeClassname: "simple-icons:flask",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Streamlit",
+          fontAwesomeClassname: "simple-icons:streamlit",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "FastAPI",
+          fontAwesomeClassname: "simple-icons:fastapi",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "ChatGpt",
+          fontAwesomeClassname: "simple-icons:openai",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        
+        {
+          skillName: "HuggingFace",
+          fontAwesomeClassname: "simple-icons:huggingface",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Google Colab",
+          fontAwesomeClassname: "simple-icons:googlecolab",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Jupyter Notebook",
+          fontAwesomeClassname: "simple-icons:jupyter",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Anaconda",
+          fontAwesomeClassname: "simple-icons:anaconda",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Tableau",
+          fontAwesomeClassname: "simple-icons:tableau",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Power BI",
+          fontAwesomeClassname: "simple-icons:powerbi",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Plotly",
+          fontAwesomeClassname: "simple-icons:plotly",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Matplotlib",
+          fontAwesomeClassname: "simple-icons:matplotlib",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+
       ],
     },
   ],
@@ -269,16 +484,30 @@ const skills = {
 const degrees = {
   degrees: [
     {
+      title: "Universität Koblenz",
+      subtitle: "Masters in Web and Data Science",
+      logo_path: "uni-koblenz.png",
+      alt_name: "M.Sc. Web and Data Science",
+      duration: "2025 - 2027",
+      descriptions: [
+        "⚡ Currently pursuing a Master's in Web and Data Science at the University of Koblenz with a focus on AI, machine learning, and modern web technologies",
+        "⚡ Studying advanced topics including Data Mining, Web Analytics, Deep Learning, and Scalable Web Systems",
+        "⚡ Actively working on academic and personal projects that integrate AI into full-stack applications",
+        "⚡ Engaged in multicultural group projects and research activities, enhancing both technical and collaborative skills",
+      ],
+      website_link: "https://www.uni-koblenz.de/en",
+    },
+    {
       title: "National University of Sciences and technology(NUST)",
       subtitle: "Bachelor in Computer Science",
       logo_path: "nust.png",
       alt_name: "BSCS",
       duration: "2018 - 2022",
       descriptions: [
-        "⚡ I studied core computer science subjects like Data Structures, DBMS, Networking, Security, etc.",
-        "⚡ I completed various online courses for Backend , Web , Mobile App Development, etc.",
-        "⚡ Always keen to do the practical work and showed great interest in all the semester projects.",
-        "⚡ Took part in many events, societies, co-curricular activities and  Won many tournaments being captain of the Football Team at NUST",
+        "⚡ Studied foundational computer science subjects including Data Structures, Algorithms, DBMS, Networking, and Cybersecurity",
+        "⚡ Completed a range of online certifications in Backend, Web, and Mobile App Development to strengthen technical expertise",
+        "⚡ Demonstrated strong hands-on skills and creativity through active participation in semester-long development projects",
+        "⚡ Actively involved in university events and societies; led the NUST Football Team as captain and won multiple inter-university tournaments",
       ],
       website_link: "https://nust.edu.pk/",
     },
@@ -289,8 +518,8 @@ const degrees = {
       alt_name: "FSC",
       duration: "2016 - 2018",
       descriptions: [
-        "⚡ Studied the basics of Engineering Subjects and developed my interest in computer science ",
-        "⚡ Lead my college as athlete and was also active in other co-curricular activities ",
+        "⚡ Gained a strong foundation in core engineering principles, which sparked a deep interest in computer science and technology",
+        "⚡ Led the college athletics team and actively participated in various co-curricular activities, demonstrating leadership and teamwork skills",
       ],
       website_link: "https://pgc.edu/",
     },
@@ -351,23 +580,25 @@ const experience = {
       experiences: [
 
         {
-          title: "Full Stack Developer",
-          company: "QuietLab",
-          company_url: "https://tryquietlab.com/",
-          logo_path: "quietlab..png",
+          title: "Full Stack Developer (Self Employeed)",
+          company: "Upwork",
+          company_url: "https://upwork.com/",
+          logo_path: "upwork.svg",
           duration: "Jul 2024 - present",
           location: "Remote",
-          description: `
-          • Drove the global expansion of QuietLab, facilitating the migration from Shopify to Checkout Champ to
-            optimize operations.
-          • Implemented comprehensive event tracking with Google Analytics and Facebook Pixels, refining
-            marketing strategies through data-driven insights.
-          • Engineered custom payment integrations and high-conversion funnels, boosting overall revenue.
-          • Executed A/B testing to enhance user engagement and conversion rates.
-          • Managed the end-to-end development process, ensuring seamless delivery across multiple project facets.
-          • Tools & Technologies: React.js, Nodejs, Shopify, Checkout Champ, Google Analytics, Facebook Pixels,
-            AWS, Ansible, Bootstrap, Jquery, Microsoft Clarity.
-          `,
+          description: `  
+    • Developed 10+ full-stack applications for Upwork clients using Ruby on Rails, Node.js, and React.js.  
+    • Integrated AI models (personalized recommendations) to increase user engagement by 35%.  
+    • Built AWS CI/CD pipelines with Ansible, reducing deployment times by 75% with zero downtime.  
+    • Optimized React performance (40% faster load times) and scaled Rails APIs (5x more users) via Redis.  
+    • Engineered secure REST APIs with OAuth 2.0/JWT for high-traffic client projects.  
+    • Collaborated with remote teams to implement AI features, boosting customer satisfaction by 30%.  
+    • Delivered 5+ Shopify integrations for e-commerce clients on Upwork.  
+    • Automated client reporting systems, saving 10+ hours/week on manual workflows.  
+    • Tools: Ruby on Rails, React, Node.js, AWS, Ansible, Redis, PostgreSQL, Docker, AI APIs.  
+`,
+      
+
           color: "#0071C5",
         },
         
@@ -377,18 +608,22 @@ const experience = {
           company: "Veroke",
           company_url: "https://www.veroke.com/",
           logo_path: "veroke.png",
-          duration: "Jul 2023 - present",
+          duration: "Jul 2023 - Aug 2024",
           location: "Islamabad, Pakistan",
           description: `
-          • Engineered robust and scalable Full Stack solutions using ROR and ReactJs, enabling the company to stay ahead in a fiercely competitive market.
-          • Championed the expansion of our client base, delivering bespoke solutions to esteemed US-based clientele, and solidifying our reputation as a trusted technology partner.
-          • Made a significant impact by optimizing and enhancing production-level code for seamless integration with Shopify and Big Commerce, resulting in increased efficiency and profitability.
-          • Designed captivating user interfaces using React Js and Bootstrap, ensuring exceptional user experiences that captivated and retained a broad audience.
-          • Collaborated closely with cross-functional QA teams to implement comprehensive testing strategies, guaranteeing the highest quality software releases.
-          • Garnered consistent recognition for a strong aptitude for problem-solving and analytical thinking, earning the trust of key stakeholders.
-          • Orchestrated a groundbreaking project that served a staggering 5 million users, revolutionizing the way they interacted with our platform, and setting new industry standards in user engagement and satisfaction.
-          
+          • Engineered robust and scalable full-stack solutions using Ruby on Rails and React.js, empowering the company to lead innovation in a highly competitive SaaS market.
+          • Led the development of a high-traffic healthcare platform (tabibgroup.net), serving over 1 million users, integrating complex features with seamless performance.
+          • Optimized and enhanced production-grade code for third-party integrations including Shopify and BigCommerce, improving system efficiency and boosting overall revenue streams.
+          • Designed and implemented interactive, responsive UI components using React.js and Bootstrap, improving user experience and retention by over 25%.
+          • Built and secured RESTful APIs with OAuth 2.0 and JWT, safeguarding sensitive data and maintaining regulatory compliance across global markets.
+          • Automated infrastructure deployments using Ansible and Terraform, reducing manual provisioning time by 65% while ensuring consistency across staging and production environments.
+          • Conducted comprehensive load testing and performance tuning with Redis caching and PostgreSQL optimizations, allowing the system to scale for 1M+ concurrent users.
+          • Collaborated closely with cross-functional QA teams, implementing automated testing pipelines and achieving 95%+ test coverage across major modules.
+          • Partnered with US-based clients to deliver bespoke, high-impact solutions tailored to specific industry verticals, enhancing client satisfaction and long-term retention.
+          • Mentored junior developers and interns, fostering a culture of knowledge sharing and continuous improvement within the engineering team.
+          • Recognized for advanced debugging and analytics capabilities, solving mission-critical issues under tight deadlines and contributing to multiple successful product launches.
           `,
+
           color: "#0071C5",
         },
         {
@@ -398,15 +633,16 @@ const experience = {
           logo_path: "devsinc.jpeg",
           duration: "Jul 2022 - Jan 2023",
           location: "Islamabad, Pakistan",
-          description: `
-          • Developed scalable Full stack solutions using ROR, MERN Stack and ReactJs.
-          • Helped the company to scale market-ready solutions for US-based clients.
-          • Contributed on production level code with Shopify and Big Commerce.
-          • Worked on technologies like React Js and Bootstrap for frontend.
-          • Worked Collaboratively with QAs to complete comprehensive testing on major software release.
-          • Consistently recognized for excellent problem solving and analytical skills by stakeholders.
-          
-          `,
+          description: `  
+    • Developed 3+ scalable full-stack applications for US clients using Ruby on Rails and MERN stack.  
+    • Collaborated with QA teams to achieve 100% test coverage for 3 major releases, reducing post-launch bugs by 60%.  
+    • Recognized by leadership for resolving 30+ critical production issues through debugging and system optimization.  
+    • Contributed to production-level code for enterprise applications, ensuring high performance and scalability.  
+    • Worked with React.js and Bootstrap to build responsive and user-friendly front-end interfaces.  
+    • Assisted in integrating third-party APIs and services to enhance application functionality.  
+    • Participated in Agile sprints, delivering features on time and meeting client requirements.  
+    • Tools: Ruby on Rails, React.js, Node.js, MongoDB, PostgreSQL, Git, CI/CD, Bootstrap.  
+`,
           color: "#0071C5",
         },
         {
@@ -416,8 +652,11 @@ const experience = {
           logo_path: "ptcl.png",
           duration: "JUN 2021 - AUG 2021",
           location: "Islamabad, Pakistan",
-          description: `• Worked under network security administrator monitoring company's network 
-          • Developed an excel based network maintenance application.     `,
+          description: `  
+    • Monitored and maintained telecom network infrastructure serving 50,000+ subscribers, ensuring 99.9% uptime  
+    • Developed Excel VBA network maintenance tool that automated 15+ manual processes, saving 20+ hours weekly  
+    • Assisted in implementing critical security patches and firewall rules that reduced network vulnerabilities by 40%  
+`,
           color: "#0071C5",
         },
       ],

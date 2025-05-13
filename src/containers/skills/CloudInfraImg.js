@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CloudInfraImg(props) {
+export default function DataScienceImg(props) {
   
  
   return (
