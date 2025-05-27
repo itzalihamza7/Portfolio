@@ -2,7 +2,7 @@
   "private": false,
   "name": "Portfolio",
   "version": "1.0.0",
-  "homepage": "https://itzalihamza7.github.io/Portfolio/",
+  "homepage": "https://www.alihamza.co/Portfolio/",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
