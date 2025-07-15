@@ -316,7 +316,6 @@ const skills = {
             color: "#007FFF",
           },
         },
-        
       ],
     },
     {
@@ -331,8 +330,7 @@ const skills = {
         "⚡ Created interactive Data Visualizations with Matplotlib, Seaborn, and Plotly to drive insights",
         "⚡ Engineered AI-powered solutions to automate tasks and enhance decision-making in web applications",
         "⚡ Integrated AI capabilities into full-stack web apps, increasing personalization and efficiency by 30%+",
-      ]
-      ,
+      ],
       softwareSkills: [
         {
           skillName: "Python",
@@ -418,7 +416,7 @@ const skills = {
             color: "#FFCA28",
           },
         },
-        
+
         {
           skillName: "HuggingFace",
           fontAwesomeClassname: "simple-icons:huggingface",
@@ -475,7 +473,6 @@ const skills = {
             color: "#FFCA28",
           },
         },
-
       ],
     },
   ],
@@ -578,7 +575,6 @@ const experience = {
     {
       title: "Work Experience",
       experiences: [
-
         {
           title: "Full Stack Developer (Self Employeed)",
           company: "Upwork",
@@ -597,12 +593,10 @@ const experience = {
     • Automated client reporting systems, saving 10+ hours/week on manual workflows.  
     • Tools: Ruby on Rails, React, Node.js, AWS, Ansible, Redis, PostgreSQL, Docker, AI APIs.  
 `,
-      
 
           color: "#0071C5",
         },
-        
-      
+
         {
           title: "Associate Software Developer",
           company: "Veroke",
@@ -736,18 +730,9 @@ const projects = {
       description:
         "A Decentralized online hospital management system where patients can securely get appointment from doctor and get the prescription after checkup.",
       languages: [
-        {
-          name: "Angularjs",
-          iconifyClass: "logos-angular",
-        },
-        {
-          name: "Django",
-          iconifyClass: "logos-django",
-        },
-        {
-          name: "Etherium",
-          iconifyClass: "logos-ethereum",
-        },
+        { name: "Angularjs", iconifyClass: "logos-angular" },
+        { name: "Django", iconifyClass: "logos-django" },
+        { name: "Etherium", iconifyClass: "logos-ethereum" },
       ],
     },
     {
@@ -756,18 +741,9 @@ const projects = {
       url: "https://github.com/itzalihamza7/UIRadiance",
       description: "An app to test the UI skills",
       languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
+        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
+        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
+        { name: "JavaScript", iconifyClass: "logos-javascript" },
       ],
     },
     {
@@ -777,22 +753,10 @@ const projects = {
       description:
         "A website where we can share blogs, edit them, comment on them , like and many more features",
       languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "Bootstrap",
-          iconifyClass: "logos-bootstrap",
-        },
-        {
-          name: "Rails",
-          iconifyClass: "logos-rails",
-        },
+        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
+        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
+        { name: "Bootstrap", iconifyClass: "logos-bootstrap" },
+        { name: "Rails", iconifyClass: "logos-rails" },
       ],
     },
     {
@@ -801,18 +765,9 @@ const projects = {
       url: "https://github.com/itzalihamza7/Ecommerece",
       description: "An Ecommerece store app to sell and buy products",
       languages: [
-        {
-          name: "Rails",
-          iconifyClass: "logos-rails",
-        },
-        {
-          name: "ReactJs",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "Stripe",
-          iconifyClass: "logos-stripe",
-        },
+        { name: "Rails", iconifyClass: "logos-rails" },
+        { name: "ReactJs", iconifyClass: "logos-react" },
+        { name: "Stripe", iconifyClass: "logos-stripe" },
       ],
     },
     {
@@ -822,18 +777,9 @@ const projects = {
       description:
         "An online wallet to where we can send and receive money from others",
       languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "Rails",
-          iconifyClass: "logos-rails",
-        },
+        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
+        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
+        { name: "Rails", iconifyClass: "logos-rails" },
       ],
     },
     {
@@ -842,70 +788,101 @@ const projects = {
       url: "https://github.com/itzalihamza7/NFT-Staking-APP",
       description: "An app to stake the NFts",
       languages: [
-        {
-          name: "Etherium",
-          iconifyClass: "logos-ethereum",
-        },
-        {
-          name: "React",
-          iconifyClass: "logos-react",
-        },
+        { name: "Etherium", iconifyClass: "logos-ethereum" },
+        { name: "React", iconifyClass: "logos-react" },
       ],
     },
     {
-      id: "4",
+      id: "5",
       name: "Social Media Memories",
       url: "https://github.com/itzalihamza7/social-media-memories",
       description: "An app to store the memories online",
       languages: [
-        {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "HTML5",
-          iconifyClass: "vscode-icons:file-type-html",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "vscode-icons:file-type-css",
-        },
-        {
-          name: "Bootstrap",
-          iconifyClass: "logos-bootstrap",
-        },
-        {
-          name: "React",
-          iconifyClass: "logos-react",
-        },
+        { name: "JavaScript", iconifyClass: "logos-javascript" },
+        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
+        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
+        { name: "Bootstrap", iconifyClass: "logos-bootstrap" },
+        { name: "React", iconifyClass: "logos-react" },
       ],
     },
     {
-      id: "4",
+      id: "6",
       name: "personal-portfolio",
       url: "https://github.com/itzalihamza7/Portfolio",
       description: "An app to show my portfolio",
       languages: [
+        { name: "JavaScript", iconifyClass: "logos-javascript" },
+        { name: "React", iconifyClass: "logos-react" },
+      ],
+    },
+    {
+      id: "7",
+      name: "BurgerApp",
+      url: "https://github.com/itzalihamza7/BurgerApp",
+      description: "App to test reactjs skills",
+      languages: [{ name: "React", iconifyClass: "logos-react" }],
+    },
+    {
+      id: "8",
+      name: "Heart Attack Analysis",
+      url: "https://github.com/itzalihamza7/Heart-Attack-Analysis",
+      description:
+        "A machine learning project to analyze and classify heart attack risk using various models.",
+      languages: [
+        { name: "Python", iconifyClass: "logos-python" },
+        { name: "NumPy", iconifyClass: "logos-numpy" },
+        { name: "Matplotlib", iconifyClass: "logos-matplotlib" },
+        { name: "Jupyter Notebook", iconifyClass: "logos-jupyter" },
         {
-          name: "JavaScript",
-          iconifyClass: "logos-javascript",
-        },
-        {
-          name: "React",
-          iconifyClass: "logos-react",
+          name: "Data Visualization",
+          iconifyClass: "logos-data-visualization",
         },
       ],
     },
     {
-      id: "3",
-      name: "BurgerApp",
-      url: "https://github.com/itzalihamza7/BurgerApp",
-      description: "App to test reactjs skills",
+      id: "9",
+      name: "Face Mask Detection",
+      url: "https://github.com/itzalihamza7/Face-mask-detection",
+      description:
+        "A deep learning model to detect whether people are wearing face masks or not.",
       languages: [
-        {
-          name: "react",
-          iconifyClass: "logos-react",
-        },
+        { name: "Python", iconifyClass: "logos-python" },
+        { name: "OpenCV", iconifyClass: "logos-opencv" },
+        { name: "TensorFlow", iconifyClass: "logos-tensorflow" },
+        { name: "Keras", iconifyClass: "logos-keras" },
+      ],
+    },
+    {
+      id: "10",
+      name: "Youtube Summariser",
+      url: "https://github.com/itzalihamza7/Youtube-Summariser",
+      description: "A tool to summarize YouTube videos using NLP techniques.",
+      languages: [
+        { name: "Python", iconifyClass: "logos-python" },
+        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
+        { name: "Streamlit", iconifyClass: "logos-streamlit" },
+      ],
+    },
+    {
+      id: "11",
+      name: "Documentation Chatbot",
+      url: "https://github.com/itzalihamza7/Documentation-Chatbot",
+      description:
+        "A chatbot that answers queries based on documentation using language models.",
+      languages: [
+        { name: "Python", iconifyClass: "logos-python" },
+        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
+      ],
+    },
+    {
+      id: "12",
+      name: "AI Demo Agent",
+      url: "https://github.com/itzalihamza7/AI-demo-Agent",
+      description:
+        "A demo agent built using OpenAI APIs and Next.js to showcase AI capabilities.",
+      languages: [
+        { name: "Next.js", iconifyClass: "logos-nextjs" },
+        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
       ],
     },
   ],
