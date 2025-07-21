@@ -2,7 +2,7 @@
   "private": false,
   "name": "Portfolio",
   "version": "1.0.0",
-  "homepage": "https://www.alihamza.co/Portfolio/",
+  "homepage": "https://www.alihamza.co/",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
