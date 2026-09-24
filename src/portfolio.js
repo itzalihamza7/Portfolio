@@ -715,26 +715,19 @@ const education = [
   },
 ];
 
+// Only certificates with a public verification link.
 const certifications = [
-  { name: "Software Engineer", issuer: "HackerRank", date: null, url: null },
-  { name: "Frontend Developer", issuer: null, date: null, url: null },
+  {
+    name: "Software Engineer",
+    issuer: "HackerRank",
+    date: null,
+    url: "https://www.hackerrank.com/certificates/29638dec854a",
+  },
   {
     name: "Artificial Intelligence Essentials",
     issuer: "Coursera",
     date: null,
-    url: null,
-  },
-  {
-    name: "Introduction to Generative AI Learning Path",
-    issuer: "Google Cloud",
-    date: "02/2024 – 05/2025",
-    url: null,
-  },
-  {
-    name: "MERN Stack Front to Back",
-    issuer: "Coursera",
-    date: "10/2022 – 12/2022",
-    url: null,
+    url: "https://coursera.org/share/66f5fe574a82ea4d70bdc886274a3f3f",
   },
 ];
 

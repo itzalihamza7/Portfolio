@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FiAward, FiCalendar, FiMapPin, FiUsers } from "react-icons/fi";
+import {
+  FiAward,
+  FiCalendar,
+  FiExternalLink,
+  FiMapPin,
+  FiUsers,
+} from "react-icons/fi";
 import { certifications, education, volunteering } from "../../portfolio";
 import image from "../../utils/images";
 import Section from "../Section";
@@ -121,17 +127,21 @@ export default function Education() {
                 const meta = [cert.issuer, cert.date]
                   .filter(Boolean)
                   .join(" · ");
-                const name = cert.url ? (
-                  <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                    {cert.name}
-                  </a>
-                ) : (
-                  cert.name
-                );
                 return (
                   <li key={cert.name} className="credential">
-                    <span className="credential__name">{name}</span>
+                    <span className="credential__name">{cert.name}</span>
                     {meta && <span className="credential__meta">{meta}</span>}
+                    {cert.url && (
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="credential__link"
+                      >
+                        View certificate <FiExternalLink aria-hidden="true" />
+                        <span className="visually-hidden">: {cert.name}</span>
+                      </a>
+                    )}
                   </li>
                 );
               })}

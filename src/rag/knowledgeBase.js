@@ -242,7 +242,7 @@ export function buildKnowledgeBase(data) {
         (cert) =>
           `- ${[cert.name, cert.issuer && `(${cert.issuer})`, cert.date]
             .filter(Boolean)
-            .join(" ")}`
+            .join(" ")}${cert.url ? `, verify at ${cert.url}` : ""}`
       ),
     ].join("\n"),
     keywords:

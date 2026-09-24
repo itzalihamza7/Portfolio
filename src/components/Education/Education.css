@@ -262,3 +262,13 @@
     padding-right: 52px;
   }
 }
+
+.credential__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
