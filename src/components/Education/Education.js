@@ -1,9 +1,52 @@
-import React from "react";
-import { FiAward, FiUsers } from "react-icons/fi";
+import React, { useState } from "react";
+import { FiAward, FiCalendar, FiMapPin, FiUsers } from "react-icons/fi";
 import { certifications, education, volunteering } from "../../portfolio";
 import image from "../../utils/images";
 import Section from "../Section";
 import "./Education.css";
+
+const VISIBLE_COURSES = 5;
+
+// "Master of Science, Web and Data Science" -> level and field.
+function splitDegree(degree) {
+  const index = degree.indexOf(", ");
+  return index === -1
+    ? { level: null, field: degree }
+    : { level: degree.slice(0, index), field: degree.slice(index + 2) };
+}
+
+function Courses({ courses }) {
+  const [showAll, setShowAll] = useState(false);
+  if (courses.length === 0) return null;
+  const hidden = courses.length - VISIBLE_COURSES;
+  const shown =
+    showAll || hidden <= 0 ? courses : courses.slice(0, VISIBLE_COURSES);
+
+  return (
+    <div className="degree__courses">
+      <h4 className="degree__courses-title">Relevant courses</h4>
+      <ul className="tag-list">
+        {shown.map((course) => (
+          <li key={course} className="tag">
+            {course}
+          </li>
+        ))}
+        {hidden > 0 && (
+          <li>
+            <button
+              type="button"
+              className="degree__more"
+              aria-expanded={showAll}
+              onClick={() => setShowAll((value) => !value)}
+            >
+              {showAll ? "Show fewer" : `+${hidden} more`}
+            </button>
+          </li>
+        )}
+      </ul>
+    </div>
+  );
+}
 
 export default function Education() {
   return (
@@ -11,21 +54,35 @@ export default function Education() {
       id="education"
       eyebrow="Education"
       title="Education and certifications"
+      lead="Computer science foundations from NUST, now specializing in web and data science at Universität Koblenz."
       alt
     >
-      <ul className="degrees">
-        {education.map((degree) => (
-          <li key={degree.school} className="card degree">
-            <img
-              src={image(degree.logo)}
-              alt=""
-              className="degree__logo"
-              loading="lazy"
-            />
-            <div className="degree__body">
-              <div className="degree__header">
-                <div>
-                  <h3 className="degree__title">{degree.degree}</h3>
+      <div className="education">
+        <ol className="degrees">
+          {education.map((degree) => {
+            const { level, field } = splitDegree(degree.degree);
+            const current = degree.end === "Present";
+            return (
+              <li
+                key={degree.school}
+                className={`degree${current ? " degree--current" : ""}`}
+              >
+                <div className="degree__logo-wrap">
+                  <img
+                    src={image(degree.logo)}
+                    alt=""
+                    className="degree__logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="degree__body">
+                  <div className="degree__top">
+                    {level && <span className="degree__level">{level}</span>}
+                    {current && (
+                      <span className="degree__badge">In progress</span>
+                    )}
+                  </div>
+                  <h3 className="degree__field">{field}</h3>
                   <p className="degree__school">
                     <a
                       href={degree.url}
@@ -34,82 +91,73 @@ export default function Education() {
                     >
                       {degree.school}
                     </a>
-                    <span> · {degree.location}</span>
                   </p>
-                </div>
-                <p className="degree__dates">
-                  {degree.start} – {degree.end}
-                </p>
-              </div>
-              {degree.courses.length > 0 && (
-                <details className="degree__courses">
-                  <summary>Relevant courses ({degree.courses.length})</summary>
-                  <ul className="tag-list">
-                    {degree.courses.map((course) => (
-                      <li key={course} className="tag">
-                        {course}
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <div className="credentials">
-        <div>
-          <h3 className="credentials__title">
-            <FiAward aria-hidden="true" /> Certifications
-          </h3>
-          <ul className="credential-list">
-            {certifications.map((cert) => {
-              const label = (
-                <>
-                  <span className="credential__name">{cert.name}</span>
-                  {(cert.issuer || cert.date) && (
-                    <span className="credential__meta">
-                      {[cert.issuer, cert.date].filter(Boolean).join(" · ")}
+                  <p className="degree__meta">
+                    <span>
+                      <FiCalendar aria-hidden="true" /> {degree.start} –{" "}
+                      {degree.end}
                     </span>
-                  )}
-                </>
-              );
-              return (
-                <li key={cert.name} className="credential">
-                  {cert.url ? (
-                    <a
-                      href={cert.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {label}
-                    </a>
-                  ) : (
-                    label
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div>
-          <h3 className="credentials__title">
-            <FiUsers aria-hidden="true" /> Volunteering and leadership
-          </h3>
-          <ul className="credential-list">
-            {volunteering.map((item) => (
-              <li key={item.organization} className="credential">
-                <span className="credential__name">
-                  {item.role}, {item.organization}
-                </span>
-                <span className="credential__meta">
-                  {item.location} · {item.start} – {item.end}
-                </span>
+                    <span>
+                      <FiMapPin aria-hidden="true" /> {degree.location}
+                    </span>
+                  </p>
+                  <Courses courses={degree.courses} />
+                </div>
               </li>
-            ))}
-          </ul>
-        </div>
+            );
+          })}
+        </ol>
+
+        <aside className="credentials">
+          <div className="card credential-card">
+            <h3 className="credential-card__title">
+              <span className="credential-card__icon" aria-hidden="true">
+                <FiAward />
+              </span>
+              Certifications
+            </h3>
+            <ul className="credential-list">
+              {certifications.map((cert) => {
+                const meta = [cert.issuer, cert.date]
+                  .filter(Boolean)
+                  .join(" · ");
+                const name = cert.url ? (
+                  <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                    {cert.name}
+                  </a>
+                ) : (
+                  cert.name
+                );
+                return (
+                  <li key={cert.name} className="credential">
+                    <span className="credential__name">{name}</span>
+                    {meta && <span className="credential__meta">{meta}</span>}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <div className="card credential-card">
+            <h3 className="credential-card__title">
+              <span className="credential-card__icon" aria-hidden="true">
+                <FiUsers />
+              </span>
+              Volunteering and leadership
+            </h3>
+            <ul className="credential-list">
+              {volunteering.map((item) => (
+                <li key={item.organization} className="credential">
+                  <span className="credential__name">{item.role}</span>
+                  <span className="credential__org">{item.organization}</span>
+                  <span className="credential__meta">
+                    {item.location} · {item.start} – {item.end}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
       </div>
     </Section>
   );

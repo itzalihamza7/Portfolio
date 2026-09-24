@@ -72,6 +72,76 @@ function FeaturedCard({ project }) {
   );
 }
 
+function slug(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+// A list row that opens to show the full description, stack and links.
+function ArchiveRow({ project }) {
+  const [open, setOpen] = useState(false);
+  const detailsId = `project-details-${slug(project.name)}`;
+  const meta = [project.type, project.date].filter(Boolean).join(" · ");
+
+  return (
+    <li className={`archive__item${open ? " archive__item--open" : ""}`}>
+      <div className="archive__row">
+        <button
+          type="button"
+          className="archive__summary-btn"
+          aria-expanded={open}
+          aria-controls={detailsId}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className="archive__main">
+            <span className="archive__name">{project.name}</span>
+            <span className="archive__summary">
+              {project.summary || project.description}
+            </span>
+          </span>
+          <CategoryPill groupId={project.group} />
+          <span className="archive__stack">
+            {project.tags.slice(0, 3).join(" · ")}
+          </span>
+          <FiChevronDown className="archive__chevron" aria-hidden="true" />
+        </button>
+        <LinkIcons project={project} />
+      </div>
+
+      {open && (
+        <div id={detailsId} className="archive__details">
+          {meta && <p className="archive__meta">{meta}</p>}
+          <p className="archive__description">{project.description}</p>
+          <ul className="tag-list" aria-label="Tech stack">
+            {project.tags.map((tag) => (
+              <li key={tag} className="tag">
+                {tag}
+              </li>
+            ))}
+          </ul>
+          {(project.url || project.repo) && (
+            <div className="archive__links">
+              {project.url && (
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <FiExternalLink aria-hidden="true" /> Visit site
+                </a>
+              )}
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiGithub aria-hidden="true" /> View code
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </li>
+  );
+}
+
 export default function Projects() {
   const [filter, setFilter] = useState("all");
   const [expanded, setExpanded] = useState(false);
@@ -135,19 +205,7 @@ export default function Projects() {
 
         <ul className="archive__list">
           {visible.map((project) => (
-            <li key={project.name} className="archive__row">
-              <div className="archive__main">
-                <span className="archive__name">{project.name}</span>
-                <span className="archive__summary">
-                  {project.summary || project.description}
-                </span>
-              </div>
-              <CategoryPill groupId={project.group} />
-              <span className="archive__stack">
-                {project.tags.slice(0, 3).join(" · ")}
-              </span>
-              <LinkIcons project={project} />
-            </li>
+            <ArchiveRow key={project.name} project={project} />
           ))}
         </ul>
 

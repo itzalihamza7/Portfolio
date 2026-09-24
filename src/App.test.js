@@ -53,3 +53,23 @@ it("answers a question asked from the hero", async () => {
     "National University of Sciences and Technology"
   );
 });
+
+it("expands a project in the list to show its details", () => {
+  act(() => {
+    ReactDOM.render(<App />, container);
+  });
+
+  const toggle = container.querySelector(".archive__summary-btn");
+  expect(toggle.getAttribute("aria-expanded")).toBe("false");
+  act(() => {
+    Simulate.click(toggle);
+  });
+
+  expect(toggle.getAttribute("aria-expanded")).toBe("true");
+  const details = container.querySelector(
+    `#${toggle.getAttribute("aria-controls")}`
+  );
+  expect(
+    details.querySelector(".archive__description").textContent.length
+  ).toBeGreaterThan(20);
+});

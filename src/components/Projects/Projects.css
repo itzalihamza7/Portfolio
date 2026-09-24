@@ -186,22 +186,96 @@
   list-style: none;
 }
 
-.archive__row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px 220px 72px;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
+.archive__item {
   border-bottom: 1px solid var(--border);
   transition: background-color 0.15s ease;
 }
 
-.archive__row:last-child {
+.archive__item:last-child {
   border-bottom: 0;
 }
 
-.archive__row:hover {
+.archive__item:hover,
+.archive__item--open {
   background: var(--bg);
+}
+
+.archive__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px;
+  align-items: center;
+  gap: 8px;
+  padding-right: 20px;
+}
+
+.archive__summary-btn {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px 200px 18px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 0 14px 20px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.archive__summary-btn:focus-visible {
+  outline-offset: -2px;
+}
+
+.archive__chevron {
+  color: var(--text-subtle);
+  transition: transform 0.2s ease;
+}
+
+.archive__item--open .archive__chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.archive__details {
+  padding: 2px 20px 20px;
+  max-width: 820px;
+  animation: archive-open 0.2s ease;
+}
+
+@keyframes archive-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.archive__meta {
+  color: var(--text-subtle);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.archive__description {
+  margin: 6px 0 14px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.archive__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.archive__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .archive__main {
@@ -274,10 +348,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .archive__row {
-    grid-template-columns: minmax(0, 1fr) auto;
+  .archive__summary-btn {
+    grid-template-columns: minmax(0, 1fr) 18px;
     grid-template-areas:
-      "main links"
+      "main chevron"
       "meta meta";
     row-gap: 8px;
   }
@@ -286,12 +360,12 @@
     grid-area: main;
   }
 
-  .archive__row .project-links {
-    grid-area: links;
+  .archive__summary-btn .category {
+    grid-area: meta;
   }
 
-  .archive__row .category {
-    grid-area: meta;
+  .archive__chevron {
+    grid-area: chevron;
   }
 
   .archive__stack {
@@ -307,4 +381,9 @@
   .archive__summary {
     white-space: normal;
   }
+}
+
+/* The full description replaces the one-line summary while a row is open. */
+.archive__item--open .archive__summary {
+  display: none;
 }
