@@ -36,7 +36,7 @@ export function buildKnowledgeBase(data) {
     title: "Profile",
     section: "about",
     text: [
-      `${profile.name} is a ${profile.headline} and ${profile.tagline}, based in ${profile.location}.`,
+      `${profile.name} is a ${profile.headline} (${profile.tagline}), based in ${profile.location}.`,
       current &&
         `He currently works as ${current.role} at ${current.company} (since ${current.start}).`,
       currentStudy &&

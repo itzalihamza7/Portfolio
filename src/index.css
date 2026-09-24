@@ -149,6 +149,7 @@ button {
 .section-title {
   font-size: clamp(28px, 4vw, 38px);
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .section-lead {

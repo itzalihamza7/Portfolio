@@ -11,7 +11,8 @@ export default function About() {
     <Section
       id="about"
       eyebrow="About"
-      title="Backend systems and GenAI features that ship"
+      // Non-breaking hyphen keeps "full-stack" together when the title wraps.
+      title={"Backend at heart, full\u2011stack in practice"}
       alt
     >
       <div className="about__grid">

@@ -17,7 +17,7 @@ const profile = {
   name: "Ali Hamza",
   firstName: "Ali",
   headline: "Full-Stack Developer",
-  tagline: "MSc Student in Web and Data Science",
+  tagline: "MSc in Web and Data Science",
   location: "Koblenz, Germany",
   email: "alihamzaali44@gmail.com",
   website: "https://www.alihamza.co",
