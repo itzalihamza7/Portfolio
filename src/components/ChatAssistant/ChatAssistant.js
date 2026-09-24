@@ -192,7 +192,7 @@ export default function ChatAssistant({
               {message.sources && message.sources.length > 0 && (
                 <p className="chat__sources">
                   Sources:{" "}
-                  {message.sources.map((source, index) => (
+                  {message.sources.slice(0, 3).map((source, index) => (
                     <React.Fragment key={source.id}>
                       {index > 0 && " · "}
                       <a href={`#${source.section}`}>{source.title}</a>

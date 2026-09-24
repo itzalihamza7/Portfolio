@@ -434,8 +434,8 @@ const projects = [
     category: "Web Application",
     date: "2026",
     description:
-      "This website. A React portfolio with a built-in RAG assistant: questions are matched against a knowledge base built from the resume data and answered by Claude through a Cloudflare Worker.",
-    tags: ["React", "RAG", "Claude API", "Cloudflare Workers"],
+      "This website. A React portfolio with a built-in RAG assistant: questions are matched against a knowledge base built from the resume data and answered by an OpenAI model through a Cloudflare Worker.",
+    tags: ["React", "RAG", "OpenAI API", "Cloudflare Workers"],
     url: "https://github.com/itzalihamza7/Portfolio",
   },
 ];

@@ -5,10 +5,10 @@ compatibility_date = "2026-05-01"
 [vars]
 # Sites allowed to call the API (comma separated).
 ALLOWED_ORIGINS = "https://www.alihamza.co,https://alihamza.co,http://localhost:3000"
-# Optional: override the model, e.g. CLAUDE_MODEL = "claude-sonnet-5"
-# CLAUDE_MODEL = "claude-opus-5"
+# Optional: override the OpenAI model (default gpt-5.4-mini)
+# OPENAI_MODEL = "gpt-5.4"
 
-# The Anthropic API key is a secret, never a var:
-#   npx wrangler secret put ANTHROPIC_API_KEY
+# The OpenAI API key is a secret, never a var:
+#   npx wrangler secret put OPENAI_API_KEY
 # For local development put it in chat-api/.dev.vars instead:
-#   ANTHROPIC_API_KEY=sk-ant-...
+#   OPENAI_API_KEY=sk-...

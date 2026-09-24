@@ -1,6 +1,6 @@
 /*
  * Retrieval entry point shared by the website (offline answers) and the chat
- * API worker (context for Claude). Keep this file free of JSX, browser APIs and
+ * API worker (context for the language model). Keep this file free of JSX, browser APIs and
  * process.env so both environments can bundle it.
  */
 import * as portfolio from "../portfolio";
