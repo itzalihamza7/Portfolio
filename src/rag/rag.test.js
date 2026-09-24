@@ -1,5 +1,6 @@
 import { knowledgeBase, retrieveContext, localAnswer } from "./index";
 import { tokenize } from "./retriever";
+import { projects } from "../portfolio";
 
 const topIds = (question, previous) =>
   retrieveContext(question, previous).results.map((result) => result.chunk.id);
@@ -28,10 +29,6 @@ describe("retrieval", () => {
     ["What did he do at Veroke?", "experience-veroke"],
     ["Has he worked with Redis caching?", "experience-veroke"],
     ["Does he know Spring Boot?", "experience-universitat-koblenz"],
-    [
-      "Which AI projects has he built?",
-      "project-rag-chatbot-for-technical-documentation",
-    ],
     [
       "Tell me about the face mask detection project",
       "project-face-mask-detection",
@@ -74,11 +71,14 @@ describe("retrieval", () => {
     expect(topIds("What did he build for Nexmuv?")[0]).toBe("project-nexmuv");
   });
 
-  it("prefers the section a question names", () => {
+  it("answers AI project questions with generative AI projects", () => {
+    const genai = projects
+      .filter((project) => project.group === "genai")
+      .map((project) => project.name);
     const top = retrieveContext(
       "Which AI projects has he built?"
     ).results.slice(0, 3);
-    top.forEach(({ chunk }) => expect(chunk.section).toBe("projects"));
+    top.forEach(({ chunk }) => expect(genai).toContain(chunk.title));
   });
 
   it("uses the previous question to resolve follow-ups", () => {

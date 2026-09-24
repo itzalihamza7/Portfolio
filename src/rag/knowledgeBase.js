@@ -144,8 +144,8 @@ export function buildKnowledgeBase(data) {
       "experience work history career timeline jobs companies employers years how long worked total",
   });
 
-  const groupTitle = (id) =>
-    projectGroups.find((group) => group.id === id).title;
+  const groupOf = (id) => projectGroups.find((group) => group.id === id);
+  const groupTitle = (id) => groupOf(id).title;
   const links = (project) =>
     [
       project.url && `Website: ${project.url}`,
@@ -196,6 +196,7 @@ export function buildKnowledgeBase(data) {
           .filter(Boolean)
           .join(", ")})`,
         project.description,
+        `Context: ${groupOf(project.group).description}`,
         `Tech stack: ${join(project.tags)}.`,
         links(project),
       ]

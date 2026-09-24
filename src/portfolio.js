@@ -395,9 +395,9 @@ const experience = [
 const projectGroups = [
   {
     id: "products",
-    title: "Products",
+    title: "Company projects",
     description:
-      "Full-stack platforms built end to end, from Rails and Node.js backends to React frontends.",
+      "Platforms built as a software engineer in company roles, from Rails and Node.js backends to React frontends.",
     layout: "featured",
   },
   {
@@ -438,8 +438,8 @@ const projects = [
     group: "products",
     type: "Healthcare platform",
     description:
-      "A healthcare platform that connects patients, doctors and clinics online.",
-    tags: ["Ruby on Rails", "React"],
+      "A healthcare platform in Saudi Arabia (Tabib Group) that connects patients with doctors and clinics, including offers on clinic and care services, across web and mobile apps. Its Ruby on Rails API still serves the platform in production.",
+    tags: ["Ruby on Rails", "REST API", "React"],
     url: "https://tabibgroup.net/",
     highlight: true,
   },
