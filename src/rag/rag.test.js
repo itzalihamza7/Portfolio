@@ -57,6 +57,20 @@ describe("retrieval", () => {
     expect(topIds(question).slice(0, 3)).toContain(expectedId);
   });
 
+  it.each([
+    "What projects has he worked on?",
+    "Can you give examples of his work?",
+    "What has he built?",
+  ])("%s -> leads with the projects overview", (question) => {
+    expect(topIds(question)[0]).toBe("projects-overview");
+    const { chunks } = retrieveContext(question);
+    expect(chunks.map((chunk) => chunk.id)).toContain("projects-overview");
+  });
+
+  it("finds client projects by name", () => {
+    expect(topIds("What did he build for Nexmuv?")[0]).toBe("project-nexmuv");
+  });
+
   it("prefers the section a question names", () => {
     const top = retrieveContext(
       "Which AI projects has he built?"
@@ -89,6 +103,12 @@ describe("localAnswer", () => {
     const { answer, sources } = localAnswer("How can I reach him?");
     expect(answer).toContain("alihamzaali44@gmail.com");
     expect(sources[0].id).toBe("contact");
+  });
+
+  it("leads with Al-Tabeeb and Iwish for general project questions", () => {
+    const { answer } = localAnswer("What projects has Ali worked on?");
+    expect(answer.indexOf("Al-Tabeeb")).toBeLessThan(answer.indexOf("Iwish"));
+    expect(answer).toContain("Iwish");
   });
 
   it("greets without searching", () => {

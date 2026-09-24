@@ -5,11 +5,14 @@
  */
 import * as portfolio from "../portfolio";
 import { buildKnowledgeBase } from "./knowledgeBase";
-import { createRetriever } from "./retriever";
+import { createRetriever, tokenize } from "./retriever";
 
 export const knowledgeBase = buildKnowledgeBase(portfolio);
 const retriever = createRetriever(knowledgeBase);
 const profileChunk = knowledgeBase.find((chunk) => chunk.id === "profile");
+const projectsOverview = knowledgeBase.find(
+  (chunk) => chunk.id === "projects-overview"
+);
 
 // Scores below this mean the question is not really about anything in the
 // knowledge base. Tuned against src/rag/rag.test.js.
@@ -18,6 +21,14 @@ export const MIN_RELEVANT_SCORE = 1.5;
 // When a question names a section ("Which AI projects…"), passages from that
 // section win over passages that merely share a keyword.
 const SECTION_BOOST = 1.5;
+// Questions made only of these words ("What has he built?") are general
+// project questions: the overview, which lists the projects to lead with,
+// comes first.
+const GENERIC_PROJECT_TERMS = new Set(
+  tokenize(
+    "project work worked built build made done example examples portfolio product products app apps application applications"
+  )
+);
 const SECTION_HINTS = {
   projects: /\b(projects?|built|build|repos?|repositor(y|ies)|github)\b/i,
   experience: /\b(work(ed|s|ing)?|jobs?|roles?|compan(y|ies)|employers?|career)\b/i,
@@ -38,7 +49,7 @@ export function retrieveContext(question, previousQuestion = "", k = 5) {
   const hinted = Object.keys(SECTION_HINTS).filter((section) =>
     SECTION_HINTS[section].test(question)
   );
-  const results = retriever
+  let results = retriever
     .search(question, { k: k * 2, context: previousQuestion })
     .map((result) =>
       hinted.includes(result.chunk.section)
@@ -47,12 +58,28 @@ export function retrieveContext(question, previousQuestion = "", k = 5) {
     )
     .sort((a, b) => b.score - a.score)
     .slice(0, k);
+  const terms = tokenize(question);
+  if (
+    terms.length > 0 &&
+    terms.every((term) => GENERIC_PROJECT_TERMS.has(term))
+  ) {
+    const top = results.length > 0 ? results[0].score : MIN_RELEVANT_SCORE;
+    results = [
+      { chunk: projectsOverview, score: Math.max(top, MIN_RELEVANT_SCORE) },
+      ...results.filter((result) => result.chunk !== projectsOverview),
+    ].slice(0, k);
+  }
   const relevant = results.filter(
     (result) => result.score >= MIN_RELEVANT_SCORE
   );
+  // Project questions always get the overview, which says which projects to
+  // lead with.
+  const pinned = hinted.includes("projects")
+    ? [profileChunk, projectsOverview]
+    : [profileChunk];
   const chunks = [
-    profileChunk,
-    ...relevant.map((r) => r.chunk).filter((c) => c !== profileChunk),
+    ...pinned,
+    ...relevant.map((r) => r.chunk).filter((c) => !pinned.includes(c)),
   ];
   return { chunks, results: relevant };
 }

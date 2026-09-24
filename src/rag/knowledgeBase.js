@@ -18,8 +18,8 @@ export function buildKnowledgeBase(data) {
     skillGroups,
     spokenLanguages,
     experience,
+    projectGroups,
     projects,
-    moreProjects,
     education,
     certifications,
     volunteering,
@@ -144,38 +144,72 @@ export function buildKnowledgeBase(data) {
       "experience work history career timeline jobs companies employers years how long worked total",
   });
 
+  const groupTitle = (id) =>
+    projectGroups.find((group) => group.id === id).title;
+  const links = (project) =>
+    [
+      project.url && `Website: ${project.url}`,
+      project.repo && `Code: ${project.repo}`,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+  // Lists every project by group, highlighted ones first, so general questions
+  // ("What has he worked on?") get the projects Ali wants to lead with.
+  const highlighted = projects.filter((project) => project.highlight);
+  add({
+    id: "projects-overview",
+    title: "Projects overview",
+    section: "projects",
+    text: [
+      `Projects to mention first when asked what ${profile.firstName} has worked on:`,
+      ...highlighted.map(
+        (project) =>
+          `- **${project.name}** (${project.type}): ${
+            project.description
+          } Tech stack: ${join(project.tags)}.`
+      ),
+      "All projects by group:",
+      ...projectGroups.map(
+        (group) =>
+          `- ${group.title}: ${projects
+            .filter((project) => project.group === group.id)
+            .map((project) => project.name)
+            .join(", ")}`
+      ),
+    ].join("\n"),
+    keywords:
+      "project projects worked work built build portfolio example examples products apps applications catalog overview",
+  });
+
   projects.forEach((project) => {
     add({
       id: `project-${slug(project.name)}`,
       title: project.name,
       section: "projects",
       text: [
-        `**${project.name}** (project; ${project.category}, ${project.date})`,
+        `**${project.name}** (${[
+          groupTitle(project.group),
+          project.type,
+          project.date,
+        ]
+          .filter(Boolean)
+          .join(", ")})`,
         project.description,
-        `Built with: ${join(project.tags)}.`,
-        project.url && `Code: ${project.url}`,
+        `Tech stack: ${join(project.tags)}.`,
+        links(project),
       ]
         .filter(Boolean)
         .join("\n"),
-      keywords:
-        "project projects built build portfolio side work app application github",
+      keywords: [
+        "project projects app application",
+        project.group === "client"
+          ? "client clients freelance upwork customer"
+          : "",
+        project.group === "genai" ? "ai genai llm rag generative" : "",
+        project.group === "research" ? "research university thesis" : "",
+      ].join(" "),
     });
-  });
-
-  add({
-    id: "projects-more",
-    title: "More projects on GitHub",
-    section: "projects",
-    text: [
-      "Other repositories on GitHub:",
-      ...moreProjects.map(
-        (project) =>
-          `- **${project.name}**: ${project.description} (${join(
-            project.tags
-          )})`
-      ),
-    ].join("\n"),
-    keywords: "project projects github repository repositories other more side",
   });
 
   education.forEach((degree) => {

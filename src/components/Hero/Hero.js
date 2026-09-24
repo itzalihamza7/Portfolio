@@ -7,9 +7,9 @@ import SocialLinks from "../SocialLinks";
 import "./Hero.css";
 
 const SUGGESTIONS = [
-  "What is Ali working on right now?",
-  "Which AI projects has he built?",
-  "How much Ruby on Rails experience does he have?",
+  "What projects has Ali worked on?",
+  "What has he built with RAG and LLMs?",
+  "What backend systems has he built?",
 ];
 
 export default function Hero({ onAsk }) {

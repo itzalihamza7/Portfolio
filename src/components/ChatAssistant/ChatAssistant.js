@@ -7,10 +7,10 @@ import FormattedText from "./FormattedText";
 import "./ChatAssistant.css";
 
 const SUGGESTIONS = [
-  "What is Ali working on right now?",
-  "What did he build at Veroke?",
-  "Which AI and machine learning projects has he done?",
-  "What is he studying?",
+  "What projects has Ali worked on?",
+  "What has he built with RAG and LLMs?",
+  "What backend work did he do at Veroke?",
+  "What is he working on right now?",
   "Does he speak German?",
   "How can I contact him?",
 ];

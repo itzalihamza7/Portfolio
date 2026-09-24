@@ -10,7 +10,7 @@ const STOPWORDS = new Set(
     "him his how i if in into is it its me my of on or our she so than that the their them " +
     "then there these they this to was we were what when where which who whom why will with " +
     "would you your yours tell about know please any some much many also just give show list " +
-    "ali hamza hamza's ali's"
+    "use uses used using ali hamza hamza's ali's"
   ).split(" ")
 );
 

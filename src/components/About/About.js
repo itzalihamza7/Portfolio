@@ -16,7 +16,7 @@ export default function About() {
     <Section
       id="about"
       eyebrow="About"
-      title="Building fast, reliable products with data and AI"
+      title="Backend systems and GenAI features that ship"
       alt
     >
       <div className="about__grid">
