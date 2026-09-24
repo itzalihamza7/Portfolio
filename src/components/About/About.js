@@ -1,11 +1,6 @@
 import React from "react";
-import { FiCheck, FiCode, FiCpu, FiDatabase } from "react-icons/fi";
-import {
-  achievements,
-  focusAreas,
-  profile,
-  spokenLanguages,
-} from "../../portfolio";
+import { FiCode, FiCpu, FiDatabase } from "react-icons/fi";
+import { focusAreas, profile, spokenLanguages } from "../../portfolio";
 import Section from "../Section";
 import "./About.css";
 
@@ -21,7 +16,7 @@ export default function About() {
     >
       <div className="about__grid">
         <div className="about__summary">
-          <p>{profile.summary}</p>
+          <p>{profile.about}</p>
           <div className="about__languages">
             <h3 className="about__subheading">Languages</h3>
             <ul className="tag-list">
@@ -52,18 +47,6 @@ export default function About() {
           })}
         </ul>
       </div>
-
-      <h3 className="about__subheading about__achievements-title">
-        Selected achievements
-      </h3>
-      <ul className="achievements">
-        {achievements.map((item) => (
-          <li key={item} className="achievement">
-            <FiCheck className="achievement__icon" aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
     </Section>
   );
 }

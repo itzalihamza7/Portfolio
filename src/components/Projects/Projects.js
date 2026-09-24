@@ -59,7 +59,13 @@ function FeaturedCard({ project }) {
         <LinkIcons project={project} />
       </div>
       <h3 className="feature__name">{project.name}</h3>
-      {project.type && <p className="feature__type">{project.type}</p>}
+      {project.type && (
+        <p className="feature__type">
+          {project.company
+            ? `${project.type} at ${project.company}`
+            : project.type}
+        </p>
+      )}
       <p className="feature__summary">
         {project.summary || project.description}
       </p>
@@ -80,7 +86,13 @@ function slug(value) {
 function ArchiveRow({ project }) {
   const [open, setOpen] = useState(false);
   const detailsId = `project-details-${slug(project.name)}`;
-  const meta = [project.type, project.date].filter(Boolean).join(" · ");
+  const meta = [
+    project.type,
+    project.company && `at ${project.company}`,
+    project.date,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <li className={`archive__item${open ? " archive__item--open" : ""}`}>
@@ -167,7 +179,7 @@ export default function Projects() {
       id="projects"
       eyebrow="Projects"
       title="What I've built"
-      lead={`${projects.length} projects across company platforms, client products, generative AI and research, each with the stack behind it.`}
+      lead="Company platforms, client products, generative AI and research, with the stack behind each one."
     >
       <ul className="features">
         {featured.map((project) => (

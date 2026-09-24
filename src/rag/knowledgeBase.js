@@ -63,7 +63,7 @@ export function buildKnowledgeBase(data) {
       profile.availability,
     ].join(" "),
     keywords:
-      "contact reach email mail message hire hiring recruit available availability open opportunity job offer role position cv resume linkedin github social location based live",
+      "contact reach email mail message hire hiring recruit available availability open opportunity job offer role position cv resume linkedin github social location based live full time fulltime part hours week start notice join",
   });
 
   add({
@@ -191,6 +191,7 @@ export function buildKnowledgeBase(data) {
         `**${project.name}** (${[
           groupTitle(project.group),
           project.type,
+          project.company && `built at ${project.company}`,
           project.date,
         ]
           .filter(Boolean)

@@ -8,8 +8,9 @@ import "./Skills.css";
 const PRIMARY_GROUPS = 8;
 
 export default function Skills() {
-  const primary = skillGroups.slice(0, PRIMARY_GROUPS);
-  const secondary = skillGroups.slice(PRIMARY_GROUPS);
+  const groups = skillGroups.filter((group) => !group.hideOnPage);
+  const primary = groups.slice(0, PRIMARY_GROUPS);
+  const secondary = groups.slice(PRIMARY_GROUPS);
 
   return (
     <Section

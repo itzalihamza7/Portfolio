@@ -30,6 +30,7 @@ const GENERIC_PROJECT_TERMS = new Set(
   )
 );
 const SECTION_HINTS = {
+  contact: /\b(full[- ]?time|part[- ]?time|hours|availab\w*|start|hire|hiring|visa|permit|contact|reach)\b/i,
   projects: /\b(projects?|built|build|repos?|repositor(y|ies)|github)\b/i,
   experience: /\b(work(ed|s|ing)?|jobs?|roles?|compan(y|ies)|employers?|career)\b/i,
   education: /\b(stud(y|ies|ied|ying)|degrees?|universit(y|ies)|courses?|certific\w*)\b/i,

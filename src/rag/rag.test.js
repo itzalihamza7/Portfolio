@@ -40,6 +40,7 @@ describe("retrieval", () => {
     ],
     ["How can I contact him?", "contact"],
     ["Is he open to hiring?", "contact"],
+    ["Can he work full-time?", "contact"],
     ["Does he speak German?", "spoken-languages"],
     ["What certifications does he have?", "certifications"],
     ["What databases does he use?", "skills-databases-and-caching"],

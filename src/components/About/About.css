@@ -67,32 +67,6 @@
   font-size: 15px;
 }
 
-.about__achievements-title {
-  margin-top: 56px;
-}
-
-.achievements {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: 12px 32px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.achievement {
-  display: flex;
-  gap: 12px;
-  color: var(--text-muted);
-  font-size: 15px;
-}
-
-.achievement__icon {
-  flex: none;
-  margin-top: 4px;
-  color: var(--success);
-}
-
 @media (max-width: 860px) {
   .about__grid {
     grid-template-columns: 1fr;

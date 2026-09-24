@@ -28,8 +28,10 @@ const profile = {
     "I build backend systems and APIs with Ruby on Rails, Node.js and Spring Boot, and bring generative AI into products with RAG and LLM-powered features.",
   summary:
     "Full-stack engineer who builds web products end to end, from APIs and databases to the interfaces people actually use. Over the past 3+ years, shipped applications for product companies and international freelance clients with Ruby on Rails and Node.js on the backend and React and Vue.js on the frontend. Focused on making systems fast and reliable: clean REST APIs secured with OAuth 2.0 and JWT, performance through Redis caching and database optimization, and automated deployments on AWS with Terraform and Ansible. Brings data and AI into products, from personalized recommendation features to interactive dashboards. Currently a Research Assistant at Universität Koblenz while completing a Master's in Web and Data Science, building Spring Boot services and Vue.js visualizations that connect data from multiple ERP systems into an explorable knowledge graph.",
+  about:
+    "I'm a full-stack developer with 3+ years of experience building web products for product companies and international clients, mostly on the backend: REST APIs in Ruby on Rails and Node.js, secured with OAuth 2.0 and JWT, made fast with Redis and query optimization, and deployed on AWS with Terraform and Ansible. I bring generative AI into products with RAG and LLM features. Today I'm a Research Assistant at Universität Koblenz while completing my Master's in Web and Data Science.",
   availability:
-    "Open to conversations about software engineering, data and AI roles, including working student positions alongside the Master's. Email is the best way to get in touch.",
+    "Available for full-time roles in full-stack, backend and AI engineering. Email is the best way to get in touch.",
 };
 
 const socialLinks = [
@@ -84,7 +86,7 @@ const focusAreas = [
   {
     title: "Full-stack product delivery",
     text:
-      "React, Next.js and Vue.js frontends on top of those backends, from healthcare and marketplace platforms to client products in AI, logistics and Web3.",
+      "React, Next.js and Vue.js frontends for client products in AI coaching, logistics and on-chain trading, together with the backends behind them.",
   },
 ];
 
@@ -221,14 +223,17 @@ const skillGroups = [
   },
   {
     title: "Web Analytics",
+    hideOnPage: true,
     items: ["Google Analytics", "Facebook Pixel"],
   },
   {
     title: "Electronics",
+    hideOnPage: true,
     items: ["Digital Logic Design", "Computer Architecture and Organization"],
   },
   {
     title: "Soft Skills",
+    hideOnPage: true,
     items: [
       "Communication",
       "Problem solving",
@@ -270,7 +275,7 @@ const spokenLanguages = [
   { name: "English", level: "Professional working" },
   { name: "Urdu", level: "Full professional" },
   { name: "Punjabi", level: "Native" },
-  { name: "German", level: "Limited working" },
+  { name: "German", level: "A2 (elementary)" },
 ];
 
 const experience = [
@@ -336,8 +341,11 @@ const experience = [
       "Built secure REST APIs with OAuth 2.0 and JWT authentication for a platform serving 5M+ registered users, including role-based access control for sensitive data.",
       "Improved API performance with Redis caching and optimized slow database queries, cutting average response times from ~600 ms to ~180 ms during peak traffic.",
       "Automated AWS infrastructure provisioning with Terraform and Ansible, reducing environment setup time by 65% (from ~3 hours to ~1 hour) and removing manual configuration errors.",
+      "Worked on Al-Tabeeb, Tabib Group's healthcare platform, with a Ruby on Rails backend and a Node.js messaging service, and built the Node.js APIs for Iwish, a peer-to-peer marketplace app.",
     ],
     tech: [
+      "Ruby on Rails",
+      "Node.js",
       "REST APIs",
       "OAuth 2.0",
       "JWT",
@@ -397,7 +405,7 @@ const projectGroups = [
     label: "Company project",
     title: "Company projects",
     description:
-      "Platforms built as a software engineer in company roles, from Rails and Node.js backends to React frontends.",
+      "Platforms built as a software engineer at Veroke, with Ruby on Rails and Node.js backends and APIs.",
   },
   {
     id: "genai",
@@ -438,26 +446,28 @@ const projects = [
   {
     name: "Al-Tabeeb",
     featured: true,
+    company: "Veroke",
     group: "products",
     type: "Healthcare platform",
     summary:
-      "Tabib Group's healthcare platform in Saudi Arabia, connecting patients with doctors and clinics across web and mobile apps. Its Rails API still runs in production.",
+      "Tabib Group's healthcare platform in Saudi Arabia, connecting patients with doctors and clinics across web and mobile apps. Rails backend with a Node.js messaging service; the Rails API still runs in production.",
     description:
-      "A healthcare platform in Saudi Arabia (Tabib Group) that connects patients with doctors and clinics, including offers on clinic and care services, across web and mobile apps. Its Ruby on Rails API still serves the platform in production.",
-    tags: ["Ruby on Rails", "REST API", "React"],
+      "A healthcare platform in Saudi Arabia (Tabib Group) that connects patients with doctors and clinics, including offers on clinic and care services, across web and mobile apps. Built at Veroke with a Ruby on Rails backend and REST API, a Node.js messaging service, and HTML and CSS views. The Rails API still serves the platform in production.",
+    tags: ["Ruby on Rails", "Node.js", "REST API", "HTML", "CSS"],
     url: "https://tabibgroup.net/",
     highlight: true,
   },
   {
     name: "Iwish",
     featured: true,
+    company: "Veroke",
     group: "products",
-    type: "Marketplace",
+    type: "Marketplace app",
     summary:
-      "A peer-to-peer marketplace where travellers fulfil wishes for items from abroad and get paid for it.",
+      "A peer-to-peer marketplace app where travellers fulfil wishes for items from abroad and get paid. I built its Node.js APIs.",
     description:
-      "A peer-to-peer marketplace for items from abroad: users post a wish for something they need from another country, and travellers fulfil the wish and get paid for it.",
-    tags: ["Node.js", "React"],
+      "A peer-to-peer marketplace app for items from abroad: users post a wish for something they need from another country, and travellers fulfil the wish and get paid for it. Built at Veroke, where Ali built the Node.js REST APIs behind the app.",
+    tags: ["Node.js", "REST API"],
     highlight: true,
   },
   {
@@ -627,34 +637,6 @@ const projects = [
       "An online store to sell and buy products, with Stripe payments.",
     tags: ["Rails", "React", "Stripe"],
     repo: "https://github.com/itzalihamza7/Ecommerece",
-  },
-  {
-    name: "NFT Staking App",
-    group: "labs",
-    description: "An app for staking NFTs.",
-    tags: ["Ethereum", "React"],
-    repo: "https://github.com/itzalihamza7/NFT-Staking-APP",
-  },
-  {
-    name: "BlogApp",
-    group: "labs",
-    description: "A blogging platform with posts, editing, comments and likes.",
-    tags: ["Rails", "Bootstrap"],
-    repo: "https://github.com/itzalihamza7/BlogApp",
-  },
-  {
-    name: "E-wallet",
-    group: "labs",
-    description: "An online wallet to send and receive money.",
-    tags: ["Rails"],
-    repo: "https://github.com/itzalihamza7/Ewallet",
-  },
-  {
-    name: "Social Media Memories",
-    group: "labs",
-    description: "An app to store and share memories online.",
-    tags: ["React", "JavaScript"],
-    repo: "https://github.com/itzalihamza7/social-media-memories",
   },
 ];
 
