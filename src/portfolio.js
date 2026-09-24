@@ -24,8 +24,7 @@ const profile = {
   photo: "ali-2026.jpg",
   resumeLink:
     "https://drive.google.com/file/d/1Te5n9U9qKroEnyLnHM8iaya9jqHCWFVB/view?usp=sharing",
-  intro:
-    "I build backend systems and APIs with Ruby on Rails, Node.js and Spring Boot, and bring generative AI into products with RAG and LLM-powered features.",
+  intro: "I build reliable backend systems and bring AI into real products.",
   summary:
     "Full-stack engineer who builds web products end to end, from APIs and databases to the interfaces people actually use. Over the past 3+ years, shipped applications for product companies and international freelance clients with Ruby on Rails and Node.js on the backend and React and Vue.js on the frontend. Focused on making systems fast and reliable: clean REST APIs secured with OAuth 2.0 and JWT, performance through Redis caching and database optimization, and automated deployments on AWS with Terraform and Ansible. Brings data and AI into products, from personalized recommendation features to interactive dashboards. Currently a Research Assistant at Universität Koblenz while completing a Master's in Web and Data Science, building Spring Boot services and Vue.js visualizations that connect data from multiple ERP systems into an explorable knowledge graph.",
   about:
