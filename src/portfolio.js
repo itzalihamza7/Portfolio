@@ -16,7 +16,7 @@ const settings = {
 const profile = {
   name: "Ali Hamza",
   firstName: "Ali",
-  headline: "Backend-focused Full-Stack Engineer",
+  headline: "Full-Stack Developer",
   tagline: "MSc Student in Web and Data Science",
   location: "Koblenz, Germany",
   email: "alihamzaali44@gmail.com",
@@ -388,54 +388,56 @@ const experience = [
   },
 ];
 
-// Project catalog, grouped so the page reads as one direction: backend-focused
-// full-stack work with generative AI. Groups render in this order.
-// layout: "featured" (large cards), "wide" (two columns), "cards" or
-// "compact" (short list).
+// Project catalog, grouped so the page reads as one direction: full-stack
+// work with a backend and generative AI focus. `label` names a single project
+// of the group on its card and in the project list.
 const projectGroups = [
   {
     id: "products",
+    label: "Company project",
     title: "Company projects",
     description:
       "Platforms built as a software engineer in company roles, from Rails and Node.js backends to React frontends.",
-    layout: "featured",
   },
   {
     id: "genai",
+    label: "Generative AI",
     title: "Generative AI and RAG",
     description:
       "Retrieval Augmented Generation and LLM applications, including the assistant on this site.",
-    layout: "cards",
   },
   {
     id: "client",
+    label: "Client work",
     title: "Client work",
     description:
       "Production products delivered for international clients through Upwork.",
-    layout: "wide",
   },
   {
     id: "research",
+    label: "Research",
     title: "Research",
     description:
       "Data integration and healthcare systems research at Universität Koblenz and NUST.",
-    layout: "wide",
   },
   {
     id: "labs",
+    label: "Side project",
     title: "Side projects",
     description:
       "Smaller builds from coursework and self-study in machine learning, blockchain and web development.",
-    layout: "compact",
   },
 ];
 
-// `highlight` marks the projects the assistant leads with when asked what Ali
-// has worked on. `url` is a live site, `repo` is source code. Cards show the
-// short `summary` when there is one; the assistant uses the full description.
+// `featured` projects get a card at the top of the Projects section; the rest
+// are listed below. `highlight` marks the projects the assistant leads with
+// when asked what Ali has worked on. `url` is a live site, `repo` is source
+// code. The page shows the short `summary` when there is one; the assistant
+// uses the full description.
 const projects = [
   {
     name: "Al-Tabeeb",
+    featured: true,
     group: "products",
     type: "Healthcare platform",
     summary:
@@ -448,6 +450,7 @@ const projects = [
   },
   {
     name: "Iwish",
+    featured: true,
     group: "products",
     type: "Marketplace",
     summary:
@@ -459,6 +462,7 @@ const projects = [
   },
   {
     name: "Portfolio AI Assistant",
+    featured: true,
     group: "genai",
     type: "RAG application",
     date: "2026",
@@ -471,6 +475,7 @@ const projects = [
   },
   {
     name: "RAG Chatbot for Technical Documentation",
+    featured: true,
     group: "genai",
     type: "RAG application",
     date: "Mar 2025",
@@ -501,6 +506,7 @@ const projects = [
   },
   {
     name: "10XCoach",
+    featured: true,
     group: "client",
     type: "AI business coaching",
     summary:
@@ -531,6 +537,7 @@ const projects = [
   },
   {
     name: "Nexmuv",
+    featured: true,
     group: "client",
     type: "Moving and logistics",
     summary:
