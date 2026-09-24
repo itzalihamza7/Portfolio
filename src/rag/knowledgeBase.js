@@ -202,7 +202,7 @@ export function buildKnowledgeBase(data) {
         .filter(Boolean)
         .join("\n"),
       keywords: [
-        "project projects app application",
+        "project projects app application backend frontend stack technology",
         project.group === "client"
           ? "client clients freelance upwork customer"
           : "",

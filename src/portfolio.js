@@ -305,7 +305,7 @@ const experience = [
     location: "Remote",
     bullets: [
       "Delivered 10+ full-stack projects for international clients with Ruby on Rails, Node.js and React, from requirements gathering through deployment and ongoing support.",
-      "Selected clients include 10XCoach (AI business coaching), Friendsy (AI voice agents), Nexmuv (moving logistics), Chainbox (on-chain trading) and Rocket Pool (Ethereum staking).",
+      "Selected clients include 10XCoach (AI business coaching), Friendsy (AI voice agents), Nexmuv (moving logistics) and Chainbox (on-chain trading).",
       "Built AI-powered recommendation features that personalized content for end users, increasing user engagement by 35%.",
       "Set up CI/CD pipelines on AWS with Ansible, reducing deployment time by 75% and enabling zero-downtime releases.",
       "Improved frontend load times by 40% through React performance optimization, and scaled Rails APIs to support 5x more users with Redis caching.",
@@ -390,7 +390,8 @@ const experience = [
 
 // Project catalog, grouped so the page reads as one direction: backend-focused
 // full-stack work with generative AI. Groups render in this order.
-// layout: "featured" (large cards), "cards" or "compact" (short list).
+// layout: "featured" (large cards), "wide" (two columns), "cards" or
+// "compact" (short list).
 const projectGroups = [
   {
     id: "products",
@@ -411,14 +412,14 @@ const projectGroups = [
     title: "Client work",
     description:
       "Production products delivered for international clients through Upwork.",
-    layout: "cards",
+    layout: "wide",
   },
   {
     id: "research",
     title: "Research",
     description:
       "Data integration and healthcare systems research at Universität Koblenz and NUST.",
-    layout: "cards",
+    layout: "wide",
   },
   {
     id: "labs",
@@ -494,8 +495,16 @@ const projects = [
     group: "client",
     type: "AI business coaching",
     description:
-      "A U.S. AI-driven coaching platform that gives entrepreneurs and small businesses structured coaching in strategy, sales, marketing, finance and operations, combining AI coaches with scorecards, planning frameworks and accountability tools.",
-    tags: ["React", "React Router", "JavaScript"],
+      "A U.S. AI-driven coaching platform that gives entrepreneurs and small businesses structured coaching in strategy, sales, marketing, finance and operations, combining AI coaches with scorecards, planning frameworks and accountability tools. Runs on a Node.js and Express API with JWT and Google sign-in.",
+    tags: [
+      "Node.js",
+      "Express",
+      "JWT",
+      "Google OAuth",
+      "React",
+      "React Router",
+      "Nginx",
+    ],
     url: "https://10xcoach.ai/",
   },
   {
@@ -503,8 +512,8 @@ const projects = [
     group: "client",
     type: "AI voice agents",
     description:
-      "A platform for building, deploying and scaling AI voice agents for phone-based customer support, integrating leading AI and speech providers to automate conversations around the clock.",
-    tags: ["React", "Next.js", "Tailwind CSS"],
+      "A platform for building, deploying and scaling AI voice agents for phone-based customer support, integrating leading AI and speech providers to automate conversations around the clock, with Next.js API routes and Paddle billing.",
+    tags: ["Next.js API routes", "Paddle", "React", "Next.js", "Tailwind CSS"],
     url: "https://friendsy.life/",
   },
   {
@@ -512,8 +521,18 @@ const projects = [
     group: "client",
     type: "Moving and logistics",
     description:
-      "A U.S. platform connecting customers with vetted movers for residential, corporate and office relocations, with instant pricing, shipment tracking, packing services and financing.",
-    tags: ["React", "React Router", "Tailwind CSS", "Radix UI", "Tinybird"],
+      "A U.S. platform connecting customers with vetted movers for residential, corporate and office relocations, with instant pricing, shipment tracking, packing services and financing. Built on Supabase with Edge Functions for user creation and device-tracking webhooks, Tinybird event analytics and Mapbox geocoding.",
+    tags: [
+      "Supabase",
+      "PostgreSQL",
+      "Edge Functions",
+      "Tinybird",
+      "Mapbox",
+      "React",
+      "React Router",
+      "Tailwind CSS",
+      "Radix UI",
+    ],
     url: "https://nexmuv.com/",
   },
   {
@@ -521,35 +540,20 @@ const projects = [
     group: "client",
     type: "On-chain trading",
     description:
-      "A blockchain-based trading platform for crypto and synthetic assets on smart contract infrastructure, with tokenized asset exposure, on-chain custody and 24/7 trading.",
+      "A blockchain-based trading platform for crypto and synthetic assets on smart contract infrastructure, with tokenized asset exposure, on-chain custody and 24/7 trading. Market data, candles and trades are served through Next.js API routes on top of the Hyperliquid API, with Privy for wallet authentication.",
     tags: [
+      "Next.js API routes",
+      "Hyperliquid API",
+      "Privy",
+      "TypeScript",
       "React",
       "Next.js",
-      "TypeScript",
-      "Framer Motion",
       "Tailwind CSS",
+      "Framer Motion",
       "Mantine",
       "Radix UI",
     ],
     url: "https://chainbox.ai/",
-  },
-  {
-    name: "Rocket Pool",
-    group: "client",
-    type: "Ethereum staking",
-    description:
-      "A decentralized Ethereum staking protocol offering liquid staking through rETH, so users can stake without running infrastructure and node operators can join with less capital.",
-    tags: ["Vue.js", "Tailwind CSS", "Headless UI"],
-    url: "https://rocketpool.net/",
-  },
-  {
-    name: "BitStake",
-    group: "client",
-    type: "Crypto gaming",
-    description:
-      "A crypto gaming platform with slots, live dealer games and betting across Bitcoin, Ethereum and stablecoins, with instant deposits.",
-    tags: ["React", "Next.js", "Tailwind CSS", "Radix UI", "Nginx"],
-    url: "https://bitstake.io/",
   },
   {
     name: "SoNBO: Social Network of Business Objects",

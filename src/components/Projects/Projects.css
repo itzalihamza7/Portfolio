@@ -54,7 +54,8 @@
   list-style: none;
 }
 
-.projects--featured {
+.projects--featured,
+.projects--wide {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
 }
 

@@ -129,11 +129,7 @@ export default function Projects() {
               ))}
             </ul>
           ) : (
-            <ul
-              className={`projects${
-                group.layout === "featured" ? " projects--featured" : ""
-              }`}
-            >
+            <ul className={`projects projects--${group.layout}`}>
               {group.items.map((project) => (
                 <ProjectCard
                   key={project.name}

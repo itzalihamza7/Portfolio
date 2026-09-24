@@ -75,12 +75,8 @@ export function tokenize(text) {
     .map(stem);
 }
 
-function expand(tokens) {
-  const expanded = [...tokens];
-  tokens.forEach((token) => {
-    (SYNONYMS[token] || []).forEach((synonym) => expanded.push(stem(synonym)));
-  });
-  return expanded;
+function synonymsOf(tokens) {
+  return tokens.flatMap((token) => (SYNONYMS[token] || []).map(stem));
 }
 
 export function createRetriever(chunks, { k1 = 1.2, b = 0.75 } = {}) {
@@ -142,8 +138,15 @@ export function createRetriever(chunks, { k1 = 1.2, b = 0.75 } = {}) {
           Math.max(weightedTerms.get(token) || 0, weight)
         )
       );
-    addTerms(expand(tokenize(context)), 0.5);
-    addTerms(expand(tokenize(query)), 1);
+    // Synonyms count half as much as the words actually typed, so a specific
+    // term ("Nexmuv") beats passages that only match expansions of a broad
+    // one ("backend").
+    const contextTokens = tokenize(context);
+    const queryTokens = tokenize(query);
+    addTerms(synonymsOf(contextTokens), 0.25);
+    addTerms(contextTokens, 0.5);
+    addTerms(synonymsOf(queryTokens), 0.5);
+    addTerms(queryTokens, 1);
 
     if (weightedTerms.size === 0) return [];
 

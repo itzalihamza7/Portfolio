@@ -68,6 +68,9 @@ describe("retrieval", () => {
   });
 
   it("finds client projects by name", () => {
+    expect(topIds("What backend did he use for Nexmuv?").slice(0, 3)).toContain(
+      "project-nexmuv"
+    );
     expect(topIds("What did he build for Nexmuv?")[0]).toBe("project-nexmuv");
   });
 
