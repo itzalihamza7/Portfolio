@@ -1,0 +1,145 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 27px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.timeline__item + .timeline__item {
+  margin-top: 24px;
+}
+
+.timeline__marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.timeline__logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.job {
+  padding: 24px 28px;
+}
+
+.job__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.job__role {
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.job__company {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.job__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-subtle);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.job__dates {
+  height: fit-content;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.job__dates--current {
+  background: rgba(18, 184, 134, 0.12);
+  color: var(--success);
+}
+
+.job__bullets {
+  margin: 16px 0 20px;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.job__bullets li + li {
+  margin-top: 6px;
+}
+
+.job__bullets li::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .timeline__marker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .timeline__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .job {
+    padding: 20px;
+  }
+
+  .job__header > div {
+    padding-right: 56px;
+  }
+}

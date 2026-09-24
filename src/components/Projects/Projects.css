@@ -1,0 +1,132 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.project__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project__date {
+  color: var(--text-subtle);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.project__name {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.project__description {
+  flex: 1;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.project__tags {
+  margin-top: 18px;
+}
+
+.project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.more-projects {
+  margin-top: 56px;
+}
+
+.more-projects__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.more-projects__title {
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.more-projects__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.more-projects__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.more-project {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.more-project:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.more-project__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.more-project__description {
+  font-size: 14px;
+}
+
+.more-project__tags {
+  color: var(--text-subtle);
+  font-size: 13px;
+}

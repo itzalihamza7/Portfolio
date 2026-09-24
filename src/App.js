@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import Main from "./containers/Main";
-import { ThemeProvider } from "styled-components";
-import { themes } from "./theme";
-import { GlobalStyles } from "./global";
-import { CursorProvider } from "react-cursor-custom";
-import { settings } from "./portfolio";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactGA from "react-ga";
+import { settings } from "./portfolio";
+import useTheme from "./hooks/useTheme";
+import Nav from "./components/Nav/Nav";
+import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Experience from "./components/Experience/Experience";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
+import Education from "./components/Education/Education";
+import Contact from "./components/Contact/Contact";
+import ChatAssistant from "./components/ChatAssistant/ChatAssistant";
 
-function App() {
+export default function App() {
+  const [theme, toggleTheme] = useTheme();
+  const [chat, setChat] = useState({ open: false, question: null });
+
   useEffect(() => {
     if (settings.googleTrackingID) {
       ReactGA.initialize(settings.googleTrackingID, {
@@ -18,29 +25,57 @@ function App() {
     }
   }, []);
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
-  const useCursor = settings.useCustomCursor;
+  // Shareable links: "#ask" opens the assistant, "#ask=<question>" also asks.
+  useEffect(() => {
+    const match = window.location.hash.match(/^#ask(?:=(.+))?$/);
+    if (match) {
+      setChat({
+        open: true,
+        question: match[1] ? decodeURIComponent(match[1]) : null,
+      });
+    }
+  }, []);
+
+  // Opens the assistant, optionally asking a question straight away.
+  const openChat = useCallback(
+    (question = null) => setChat({ open: true, question }),
+    []
+  );
+  const closeChat = useCallback(
+    () => setChat({ open: false, question: null }),
+    []
+  );
+  const questionHandled = useCallback(
+    () => setChat((c) => ({ ...c, question: null })),
+    []
+  );
 
   return (
-    <ThemeProvider theme={themes[theme]}>
-      <>
-        <GlobalStyles />
-        <div>
-          {useCursor ? (
-            <CursorProvider
-              color={themes[theme].secondaryText}
-              ringSize={25}
-              transitionTime={75}
-            >
-              <Main theme={themes[theme]} setTheme={setTheme} />
-            </CursorProvider>
-          ) : (
-            <Main theme={themes[theme]} setTheme={setTheme} />
-          )}
-        </div>
-      </>
-    </ThemeProvider>
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Nav
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        onOpenChat={() => openChat()}
+      />
+      <main id="main">
+        <Hero onAsk={openChat} />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact onOpenChat={() => openChat()} />
+      </main>
+      <ChatAssistant
+        open={chat.open}
+        pendingQuestion={chat.question}
+        onQuestionHandled={questionHandled}
+        onOpen={() => openChat()}
+        onClose={closeChat}
+      />
+    </>
   );
 }
-
-export default App;

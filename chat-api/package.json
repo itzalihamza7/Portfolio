@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "portfolio-chat-api",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.86.0"
+  }
+}

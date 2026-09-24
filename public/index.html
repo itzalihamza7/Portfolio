@@ -1,62 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href= 
-"https://drive.google.com/file/d/1IinJQn50S5AC9UUiYP10hJBqaZspiDqn/view?usp=sharing" /> 
-   <meta charset="utf-8" />
-  
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ali Hamza | Full-Stack Software Engineer</title>
     <meta
-      name="Ali Hamza | Portfolio"
-      content="Web site created using create-react-app"
+      name="description"
+      content="Ali Hamza is a full-stack software engineer (Ruby on Rails, Node.js, React, Vue.js, Python) and MSc student in Web and Data Science at Universität Koblenz. Ask the AI assistant anything about his experience."
     />
-    <meta property="og:title" content="Ali Hamza | Portfolio" />
+    <meta property="og:title" content="Ali Hamza | Full-Stack Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full-stack engineer building web products end to end, with data and AI. Ask the AI assistant about his experience, skills and projects."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://itzalihamza7.github.io/" />
-
-
-    
-   
-
-
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#000000">
-
-  
+    <meta property="og:url" content="https://www.alihamza.co/" />
+    <meta name="theme-color" content="#0b0f17" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
-
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Ali Hamza | Portfolio</title>
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

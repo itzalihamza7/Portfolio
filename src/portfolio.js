@@ -1,902 +1,597 @@
-/* Change this file to get your personal Porfolio */
+/*
+ * Single source of truth for the portfolio.
+ *
+ * Everything on the page AND everything the AI assistant knows comes from this
+ * file (see src/rag/knowledgeBase.js), so keep it accurate. It must stay plain
+ * data with no imports or process.env access, because the chat API worker in
+ * chat-api/ bundles it as well.
+ *
+ * Content follows the Master Resume (Sep 2026).
+ */
 
-// Website related settings
 const settings = {
-  isSplash: true, // Change this to true if you want to use the splash screen.
-  useCustomCursor: true, // Change this to false if you want the good'ol cursor
   googleTrackingID: "UA-174238252-2",
 };
 
-//Home Page
-const greeting = {
-  title: "Hello 👋.",
-  title2: "Ali",
-  logo_name: "ali.hamza()",
-  nickname: "ali",
-  full_name: "Ali Hamza",
-  subTitle:
-    "Full Stack Developer, GEN AI and Data Science Enthusiast 🔥. Always learning.",
+const profile = {
+  name: "Ali Hamza",
+  firstName: "Ali",
+  headline: "Full-Stack Software Engineer",
+  tagline: "MSc Student in Web and Data Science",
+  location: "Koblenz, Germany",
+  email: "alihamzaali44@gmail.com",
+  website: "https://www.alihamza.co",
+  photo: "ali.jpg",
   resumeLink:
     "https://drive.google.com/file/d/1Te5n9U9qKroEnyLnHM8iaya9jqHCWFVB/view?usp=sharing",
-  mail: "alihamzaali44@gmail.com",
+  intro:
+    "I build web products end to end, from APIs and databases to the interfaces people actually use, and I bring data and AI into them.",
+  summary:
+    "Full-stack engineer who builds web products end to end, from APIs and databases to the interfaces people actually use. Over the past 3+ years, shipped applications for product companies and international freelance clients with Ruby on Rails and Node.js on the backend and React and Vue.js on the frontend. Focused on making systems fast and reliable: clean REST APIs secured with OAuth 2.0 and JWT, performance through Redis caching and database optimization, and automated deployments on AWS with Terraform and Ansible. Brings data and AI into products, from personalized recommendation features to interactive dashboards. Currently a Research Assistant at Universität Koblenz while completing a Master's in Web and Data Science, building Spring Boot services and Vue.js visualizations that connect data from multiple ERP systems into an explorable knowledge graph.",
+  availability:
+    "Open to conversations about software engineering, data and AI roles, including working student positions alongside the Master's. Email is the best way to get in touch.",
 };
 
-const socialMediaLinks = {
-  /* Your Social Media Link */
-  github: "https://github.com/itzalihamza7",
-  linkedin: "https://www.linkedin.com/in/alihamza1234/",
-  gmail: "alihamzaali44@gmail.com",
-  gitlab: "https://gitlab.com/",
-  facebook: "https://www.facebook.com/alihamzaali44?mibextid=ZbWKwL",
-  twitter: "https://twitter.com/alihamzaftcr7?t=Ewgol7pvS27XgShzGr930A&s=09",
-  instagram: "https://instagram.com/itz_alihamza7?igshid=NTE5MzUyOTU=",
-};
+const socialLinks = [
+  {
+    name: "GitHub",
+    handle: "itzalihamza7",
+    url: "https://github.com/itzalihamza7",
+  },
+  {
+    name: "LinkedIn",
+    handle: "alihamza1234",
+    url: "https://www.linkedin.com/in/alihamza1234/",
+  },
+  {
+    name: "Email",
+    handle: "alihamzaali44@gmail.com",
+    url: "mailto:alihamzaali44@gmail.com",
+  },
+];
 
-const skills = {
-  data: [
-    {
-      title: "Full Stack Development",
-      fileName: "FullStackImg",
-      skills: [
-        "⚡ Built and deployed 10+ interactive full-stack applications using MERN and Ruby on Rails, enhancing scalability and performance",
-        "⚡ Designed responsive and high-performance front ends with React.js and HTML/CSS, improving load times by up to 40%",
-        "⚡ Created and maintained secure REST APIs using Node.js, Express, and Rails with JWT/OAuth for 5M+ user systems",
-        "⚡ Integrated AI features like personalized recommendations, boosting user engagement by 35% across projects",
-        "⚡ Automated CI/CD pipelines using AWS, Ansible, and Terraform, reducing deployment and provisioning time by up to 75%",
-      ],
-      softwareSkills: [
-        {
-          skillName: "HTML5",
-          fontAwesomeClassname: "simple-icons:html5",
-          style: {
-            color: "#E34F26",
-          },
-        },
-        {
-          skillName: "CSS3",
-          fontAwesomeClassname: "fa-css3",
-          style: {
-            color: "#1572B6",
-          },
-        },
-        {
-          skillName: "JavaScript",
-          fontAwesomeClassname: "simple-icons:javascript",
-          style: {
-            backgroundColor: "#FFFFFF",
-            color: "#F7DF1E",
-          },
-        },
-        // {
-        //   skillName: "PHP",
-        //   fontAwesomeClassname: "simple-icons:php",
-        //   style: {
-        //     color: "#7377AD",
-        //   },
-        // },
-        {
-          skillName: "ReactJS",
-          fontAwesomeClassname: "simple-icons:react",
-          style: {
-            color: "#61DAFB",
-          },
-        },
-        {
-          skillName: "NodeJS",
-          fontAwesomeClassname: "simple-icons:nodedotjs",
-          style: {
-            color: "#339933",
-          },
-        },
-        {
-          skillName: "NPM",
-          fontAwesomeClassname: "simple-icons:npm",
-          style: {
-            color: "#CB3837",
-          },
-        },
-        {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
-          style: {
-            color: "#439743",
-          },
-        },
-        // {
-        //   skillName: "GraphQL",
-        //   fontAwesomeClassname: "simple-icons:graphql",
-        //   style: {
-        //     color: "#DE33A6",
-        //   },
-        // },
-        // {
-        //   skillName: "Android",
-        //   fontAwesomeClassname: "simple-icons:android",
-        //   style: {
-        //     color: "#3DDC84",
-        //   },
-        // },
+// Headline numbers shown under the hero.
+const highlights = [
+  { value: "3+", label: "years shipping production software" },
+  { value: "5M+", label: "registered users on a platform I built APIs for" },
+  { value: "~180 ms", label: "peak API response time, down from ~600 ms" },
+  { value: "10+", label: "full-stack projects for international clients" },
+];
 
-        {
-          skillName: "ROR",
-          fontAwesomeClassname: "simple-icons:rubyonrails",
-          style: {
-            color: "#02569B",
-          },
-        },
-        {
-          skillName: "Ruby",
-          fontAwesomeClassname: "simple-icons:ruby",
-          style: {
-            color: "#29B0EE",
-          },
-        },
-        // {
-        //   skillName: "Visual Basic",
-        //   fontAwesomeClassname: "simple-icons:dot-net",
-        //   style: {
-        //     color: "#029FCE",
-        //   },
-        // },
-        {
-          skillName: "MySQL",
-          fontAwesomeClassname: "simple-icons:mysql",
-          style: {
-            color: "#4479A1",
-          },
-        },
-        {
-          skillName: "jQuery",
-          fontAwesomeClassname: "simple-icons:jquery",
-          style: {
-            color: "#0865A6",
-          },
-        },
-        // {
-        //   skillName: "Kali Linux",
-        //   fontAwesomeClassname: "simple-icons:kalilinux",
-        //   style: {
-        //     color: "#207297",
-        //   },
-        // },
-        {
-          skillName: "Postgress",
-          fontAwesomeClassname: "simple-icons:postgresql",
-          style: {
-            color: "#CA1A22",
-          },
-        },
-        {
-          skillName: "Github",
-          fontAwesomeClassname: "simple-icons:github",
-          style: {
-            color: "#E94E32",
-          },
-        },
-        {
-          skillName: "Git",
-          fontAwesomeClassname: "simple-icons:git",
-          style: {
-            color: "#F05032",
-          },
-        },
-        {
-          skillName: "Firebase",
-          fontAwesomeClassname: "simple-icons:firebase",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Shopify",
-          fontAwesomeClassname: "simple-icons:shopify",
-          style: {
-            color: "#96BF48",
-          },
-        },
-        {
-          skillName: "Big Commerce",
-          fontAwesomeClassname: "simple-icons:bigcommerce",
-          style: {
-            color: "#00A3E0",
-          },
-        },
-        {
-          skillName: "Bootstrap",
-          fontAwesomeClassname: "simple-icons:bootstrap",
-          style: {
-            color: "#563D7C",
-          },
-        },
-        {
-          skillName: "Tailwind CSS",
-          fontAwesomeClassname: "simple-icons:tailwindcss",
-          style: {
-            color: "#38B2AC",
-          },
-        },
-        //aws
-        {
-          skillName: "AWS",
-          fontAwesomeClassname: "simple-icons:amazonaws",
-          style: {
-            color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Ansible",
-          fontAwesomeClassname: "simple-icons:ansible",
-          style: {
-            color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Docker",
-          fontAwesomeClassname: "simple-icons:docker",
-          style: {
-            color: "#2496ED",
-          },
-        },
-        {
-          skillName: "Kubernetes",
-          fontAwesomeClassname: "simple-icons:kubernetes",
-          style: {
-            color: "#326CE5",
-          },
-        },
-        {
-          skillName: "Figma",
-          fontAwesomeClassname: "simple-icons:figma",
-          style: {
-            color: "#F24E1E",
-          },
-        },
-        {
-          skillName: "Adobe XD",
-          fontAwesomeClassname: "simple-icons:adobexd",
-          style: {
-            color: "#FF61F6",
-          },
-        },
-        {
-          skillName: "Canva",
-          fontAwesomeClassname: "simple-icons:canva",
-          style: {
-            color: "#00C4CC",
-          },
-        },
-        //nodejs
-        {
-          skillName: "ExpressJS",
-          fontAwesomeClassname: "simple-icons:express",
-          style: {
-            color: "#000000",
-          },
-        },
-        {
-          skillName: "Heroku",
-          fontAwesomeClassname: "simple-icons:heroku",
-          style: {
-            color: "#430098",
-          },
-        },
-        {
-          skillName: "Vercel",
-          fontAwesomeClassname: "simple-icons:vercel",
-          style: {
-            color: "#000000",
-          },
-        },
-        {
-          skillName: "Netlify",
-          fontAwesomeClassname: "simple-icons:netlify",
-          style: {
-            color: "#00C4CC",
-          },
-        },
-        //react
-        {
-          skillName: "NextJS",
-          fontAwesomeClassname: "simple-icons:nextdotjs",
-          style: {
-            color: "#000000",
-          },
-        },
-        {
-          skillName: "Redux",
-          fontAwesomeClassname: "simple-icons:redux",
-          style: {
-            color: "#764ABC",
-          },
-        },
-        {
-          skillName: "Material UI",
-          fontAwesomeClassname: "simple-icons:mui",
-          style: {
-            color: "#007FFF",
-          },
-        },
-      ],
-    },
-    {
-      title: "AI & ML and Data Science",
-      fileName: "DataScienceImg",
-      skills: [
-        "⚡ Developed and deployed multiple AI/ML models using TensorFlow and PyTorch for real-world applications",
-        "⚡ Built and fine-tuned Generative AI models for content creation and automation tasks",
-        "⚡ Designed and implemented intelligent chatbots using NLP and transformer-based models (e.g., GPT, BERT)",
-        "⚡ Delivered end-to-end Data Science projects including preprocessing, model training, and evaluation",
-        "⚡ Performed advanced Data Analysis using Pandas, NumPy, and Scikit-learn on large-scale datasets",
-        "⚡ Created interactive Data Visualizations with Matplotlib, Seaborn, and Plotly to drive insights",
-        "⚡ Engineered AI-powered solutions to automate tasks and enhance decision-making in web applications",
-        "⚡ Integrated AI capabilities into full-stack web apps, increasing personalization and efficiency by 30%+",
-      ],
-      softwareSkills: [
-        {
-          skillName: "Python",
-          fontAwesomeClassname: "simple-icons:python",
-          style: {
-            color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Tensorflow",
-          fontAwesomeClassname: "simple-icons:tensorflow",
-          style: {
-            color: "#38AFBB",
-          },
-        },
-        {
-          skillName: "Keras",
-          fontAwesomeClassname: "simple-icons:keras",
-          style: {
-            color: "#6863A6",
-          },
-        },
-        {
-          skillName: "Pytorch",
-          fontAwesomeClassname: "simple-icons:pytorch",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "OpenCV",
-          fontAwesomeClassname: "simple-icons:opencv",
-          style: {
-            color: "#336791",
-          },
-        },
-        {
-          skillName: "Pandas",
-          fontAwesomeClassname: "simple-icons:pandas",
-          style: {
-            color: "#1488C6",
-          },
-        },
-        {
-          skillName: "NumPy",
-          fontAwesomeClassname: "simple-icons:numpy",
-          style: {
-            color: "#5b77ef",
-          },
-        },
-        {
-          skillName: "Scikit Learn",
-          fontAwesomeClassname: "simple-icons:scikitlearn",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Flask",
-          fontAwesomeClassname: "simple-icons:flask",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Streamlit",
-          fontAwesomeClassname: "simple-icons:streamlit",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "FastAPI",
-          fontAwesomeClassname: "simple-icons:fastapi",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "ChatGpt",
-          fontAwesomeClassname: "simple-icons:openai",
-          style: {
-            color: "#FFCA28",
-          },
-        },
+const achievements = [
+  "Built secure REST APIs with OAuth 2.0, JWT and role-based access control for a platform with 5M+ registered users.",
+  "Cut average API response times from ~600 ms to ~180 ms during peak traffic through Redis caching and query optimization.",
+  "Reduced environment setup time by 65% (from ~3 hours to ~1 hour) with Terraform and Ansible, removing manual configuration errors.",
+  "Reduced deployment time by 75% and enabled zero-downtime releases with CI/CD on AWS.",
+  "Increased user engagement by 35% with AI-powered recommendation features.",
+  "Improved frontend load times by 40% and scaled Rails APIs to support 5x more users with Redis caching.",
+  "Reached 100% test coverage on critical user flows across 3 major releases (RSpec, Jest), cutting post-launch bugs by 60%.",
+  "Resolved 30+ critical production issues and was recognized by leadership.",
+  "Delivered 10+ full-stack projects for international freelance clients.",
+];
 
-        {
-          skillName: "HuggingFace",
-          fontAwesomeClassname: "simple-icons:huggingface",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Google Colab",
-          fontAwesomeClassname: "simple-icons:googlecolab",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Jupyter Notebook",
-          fontAwesomeClassname: "simple-icons:jupyter",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Anaconda",
-          fontAwesomeClassname: "simple-icons:anaconda",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Tableau",
-          fontAwesomeClassname: "simple-icons:tableau",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Power BI",
-          fontAwesomeClassname: "simple-icons:powerbi",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Plotly",
-          fontAwesomeClassname: "simple-icons:plotly",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Matplotlib",
-          fontAwesomeClassname: "simple-icons:matplotlib",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-      ],
-    },
-  ],
-};
+const focusAreas = [
+  {
+    title: "Full-stack web products",
+    text:
+      "REST APIs, databases and interfaces with Ruby on Rails, Node.js, React and Vue.js, built to be fast, secure and easy to deploy.",
+  },
+  {
+    title: "Data and AI",
+    text:
+      "Retrieval Augmented Generation, LLM applications, recommendation features, machine learning models and interactive dashboards.",
+  },
+  {
+    title: "Enterprise and healthcare data",
+    text:
+      "Knowledge graphs over ERP data at Universität Koblenz, and FHIR interoperability with secure patient records.",
+  },
+];
 
-const degrees = {
-  degrees: [
-    {
-      title: "Universität Koblenz",
-      subtitle: "Masters in Web and Data Science",
-      logo_path: "uni-koblenz.png",
-      alt_name: "M.Sc. Web and Data Science",
-      duration: "2025 - 2027",
-      descriptions: [
-        "⚡ Currently pursuing a Master's in Web and Data Science at the University of Koblenz with a focus on AI, machine learning, and modern web technologies",
-        "⚡ Studying advanced topics including Data Mining, Web Analytics, Deep Learning, and Scalable Web Systems",
-        "⚡ Actively working on academic and personal projects that integrate AI into full-stack applications",
-        "⚡ Engaged in multicultural group projects and research activities, enhancing both technical and collaborative skills",
-      ],
-      website_link: "https://www.uni-koblenz.de/en",
-    },
-    {
-      title: "National University of Sciences and technology(NUST)",
-      subtitle: "Bachelor in Computer Science",
-      logo_path: "nust.png",
-      alt_name: "BSCS",
-      duration: "2018 - 2022",
-      descriptions: [
-        "⚡ Studied foundational computer science subjects including Data Structures, Algorithms, DBMS, Networking, and Cybersecurity",
-        "⚡ Completed a range of online certifications in Backend, Web, and Mobile App Development to strengthen technical expertise",
-        "⚡ Demonstrated strong hands-on skills and creativity through active participation in semester-long development projects",
-        "⚡ Actively involved in university events and societies; led the NUST Football Team as captain and won multiple inter-university tournaments",
-      ],
-      website_link: "https://nust.edu.pk/",
-    },
-    {
-      title: "Punjab Group of Colleges",
-      subtitle: "FSC (Pre Eng)",
-      logo_path: "pgc.png",
-      alt_name: "FSC",
-      duration: "2016 - 2018",
-      descriptions: [
-        "⚡ Gained a strong foundation in core engineering principles, which sparked a deep interest in computer science and technology",
-        "⚡ Led the college athletics team and actively participated in various co-curricular activities, demonstrating leadership and teamwork skills",
-      ],
-      website_link: "https://pgc.edu/",
-    },
-  ],
-};
+const skillGroups = [
+  {
+    title: "Programming Languages",
+    items: ["Ruby", "JavaScript (ES6+)", "TypeScript", "Python", "Java", "SQL"],
+  },
+  {
+    title: "Backend",
+    items: [
+      "Ruby on Rails",
+      "Node.js",
+      "Express.js",
+      "Spring Boot",
+      "Flask",
+      "REST APIs",
+      "Microservices",
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      "React",
+      "Redux",
+      "Vue.js",
+      "HTML5",
+      "CSS3",
+      "Single page applications",
+      "Responsive UI",
+      "Dashboard and interface design",
+    ],
+  },
+  {
+    title: "AI and Machine Learning",
+    items: [
+      "Large language models",
+      "Retrieval Augmented Generation",
+      "LangChain",
+      "OpenAI API",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "OpenCV",
+      "MobileNetV2",
+      "Computer vision",
+      "Streamlit",
+    ],
+  },
+  {
+    title: "Data",
+    items: [
+      "Exploratory data analysis",
+      "Data pipelines",
+      "Jupyter",
+      "Plotly",
+      "Dash",
+      "Tableau",
+      "Data cleaning and validation",
+      "Statistical models (linear and logistic regression, KNN, decision trees)",
+    ],
+  },
+  {
+    title: "Cloud and DevOps",
+    items: [
+      "AWS (EC2, S3)",
+      "Docker",
+      "Terraform",
+      "Ansible",
+      "CI/CD",
+      "Git",
+      "Infrastructure management",
+    ],
+  },
+  {
+    title: "Databases and Caching",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Database design",
+      "Relational data modeling",
+      "Query optimization",
+      "ERD",
+    ],
+  },
+  {
+    title: "Testing and Quality",
+    items: [
+      "RSpec",
+      "Jest",
+      "Unit and integration testing",
+      "Test automation",
+      "Code reviews",
+      "Debugging and root cause analysis",
+      "Performance profiling",
+    ],
+  },
+  {
+    title: "Security",
+    items: [
+      "OAuth 2.0",
+      "JWT",
+      "Role-based access control",
+      "Secure API design",
+      "Digital signatures and hashing",
+    ],
+  },
+  {
+    title: "Web3 and Blockchain",
+    items: ["Ethereum", "Smart contracts", "Blockchain-based systems"],
+  },
+  {
+    title: "Healthcare",
+    items: [
+      "FHIR interoperability standards",
+      "Clinical data models",
+      "Patient data security",
+    ],
+  },
+  {
+    title: "Web Analytics",
+    items: ["Google Analytics", "Facebook Pixel"],
+  },
+  {
+    title: "Electronics",
+    items: ["Digital Logic Design", "Computer Architecture and Organization"],
+  },
+  {
+    title: "Methods",
+    items: [
+      "Requirements analysis",
+      "Object-oriented design",
+      "Technical documentation",
+      "Flow and process diagrams",
+    ],
+  },
+  {
+    title: "Soft Skills",
+    items: [
+      "Communication",
+      "Problem solving",
+      "Adaptability",
+      "Leadership",
+      "Teamwork",
+      "Cross-functional collaboration",
+      "Independent and structured working style",
+    ],
+  },
+];
 
-const certifications = {
-  certifications: [
-    {
-      title: "Hackathon",
-      subtitle: "ACM Hackathon",
-      logo_path: "hackathon1.svg",
-      certificate_link:
-        "https://drive.google.com/file/d/1HyR1A6lgQjvDeiIv0_LxolX_kzvFE_Q2/view?usp=share_link",
-      alt_name: "hackathon",
-      color_code: "#E2405F",
-    },
-    {
-      title: "Cyber Security & Cyber Forensics",
-      subtitle: "Workshop at NUST",
-      logo_path: "iit.png",
-      certificate_link:
-        "https://drive.google.com/file/d/12auzjUKxrxPJFN9ZowaNzSYqNmO3y6Pt/view?usp=share_link",
-      alt_name: "Workshop",
-      color_code: "#2AAFED",
-    },
-    {
-      title: "MLH Local Hack Day: Build",
-      subtitle: "Major League Hacking",
-      logo_path: "mlh-logo.svg",
-      certificate_link:
-        "https://drive.google.com/file/d/1HyR1A6lgQjvDeiIv0_LxolX_kzvFE_Q2/view?usp=share_link",
-      alt_name: "Google",
-      color_code: "#fe0037",
-    },
-    {
-      title: "Hack20",
-      subtitle: "Flutter International Hackathon",
-      logo_path: "flutter.png",
-      certificate_link:
-        "https://drive.google.com/file/d/1G_6Gz0IEgX5OGxoHZJruxVJXUEx6Htr_/view?usp=share_link",
-      alt_name: "Flutter International Hackathon",
-      color_code: "#2AAFED",
-    },
-  ],
-};
+// Technologies shown with logos in the Skills section. Icons are mapped by
+// name in src/components/TechIcon.
+const coreStack = [
+  "Ruby on Rails",
+  "Node.js",
+  "React",
+  "Vue.js",
+  "TypeScript",
+  "Python",
+  "Java",
+  "Spring Boot",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "AWS",
+  "Docker",
+  "Terraform",
+  "Ansible",
+  "TensorFlow",
+  "PyTorch",
+  "Scikit-learn",
+  "OpenAI API",
+  "Jest",
+];
 
-// Experience Page
-const experience = {
-  title: "Experience",
-  subtitle: "Work, Internship and Volunteership",
-  description:
-    "I have done Internships and jobs in field of computer science and have experience of an year. I have been a active freelancer and developed many projects for clients. I am looking forward to use my skills in this field.",
-  header_image_path: "experience.svg",
-  sections: [
-    {
-      title: "Work Experience",
-      experiences: [
-        {
-          title: "Full Stack Developer (Self Employeed)",
-          company: "Upwork",
-          company_url: "https://upwork.com/",
-          logo_path: "upwork.svg",
-          duration: "Jul 2024 - present",
-          location: "Remote",
-          description: `  
-    • Developed 10+ full-stack applications for Upwork clients using Ruby on Rails, Node.js, and React.js.  
-    • Integrated AI models (personalized recommendations) to increase user engagement by 35%.  
-    • Built AWS CI/CD pipelines with Ansible, reducing deployment times by 75% with zero downtime.  
-    • Optimized React performance (40% faster load times) and scaled Rails APIs (5x more users) via Redis.  
-    • Engineered secure REST APIs with OAuth 2.0/JWT for high-traffic client projects.  
-    • Collaborated with remote teams to implement AI features, boosting customer satisfaction by 30%.  
-    • Delivered 5+ Shopify integrations for e-commerce clients on Upwork.  
-    • Automated client reporting systems, saving 10+ hours/week on manual workflows.  
-    • Tools: Ruby on Rails, React, Node.js, AWS, Ansible, Redis, PostgreSQL, Docker, AI APIs.  
-`,
+const spokenLanguages = [
+  { name: "English", level: "Professional working" },
+  { name: "Urdu", level: "Full professional" },
+  { name: "Punjabi", level: "Native" },
+  { name: "German", level: "Limited working" },
+];
 
-          color: "#0071C5",
-        },
+const experience = [
+  {
+    role: "Research Assistant",
+    company: "Universität Koblenz",
+    companyUrl: "https://www.uni-koblenz.de/en",
+    logo: "uni-koblenz.png",
+    start: "Sep 2025",
+    end: "Present",
+    location: "Koblenz, Germany",
+    bullets: [
+      "Contributing to the SoNBO (Social Network of Business Objects) project, an innovative approach to information integration for ERP systems.",
+      "Supporting a data pipeline that connects multiple enterprise systems through adapters to an exploration layer, integrating business objects into a social network based knowledge graph for ERP data analysis and visualization.",
+      "Building backend services with Spring Boot (Java) and frontend visualizations with Vue.js.",
+    ],
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Vue.js",
+      "Knowledge graphs",
+      "Data pipelines",
+    ],
+  },
+  {
+    role: "Full-Stack Developer (Freelance)",
+    company: "Upwork",
+    companyUrl: "https://www.upwork.com/",
+    logo: "upwork.svg",
+    start: "Aug 2024",
+    end: "Jul 2025",
+    location: "Remote",
+    bullets: [
+      "Delivered 10+ full-stack projects for international clients with Ruby on Rails, Node.js and React, from requirements gathering through deployment and ongoing support.",
+      "Built AI-powered recommendation features that personalized content for end users, increasing user engagement by 35%.",
+      "Set up CI/CD pipelines on AWS with Ansible, reducing deployment time by 75% and enabling zero-downtime releases.",
+      "Improved frontend load times by 40% through React performance optimization, and scaled Rails APIs to support 5x more users with Redis caching.",
+      "Built interactive dashboards with Python (Plotly, Dash) and Tableau, and trained scikit-learn models (linear regression, decision trees) to turn client datasets into actionable insights.",
+    ],
+    tech: [
+      "Ruby on Rails",
+      "Node.js",
+      "React",
+      "AWS",
+      "Ansible",
+      "Redis",
+      "Python",
+      "Plotly Dash",
+      "Tableau",
+      "Scikit-learn",
+    ],
+  },
+  {
+    role: "Software Engineer",
+    company: "Veroke",
+    companyUrl: "https://www.veroke.com/",
+    logo: "veroke.png",
+    start: "Apr 2023",
+    end: "Aug 2024",
+    location: "Islamabad, Pakistan",
+    bullets: [
+      "Built secure REST APIs with OAuth 2.0 and JWT authentication for a platform serving 5M+ registered users, including role-based access control for sensitive data.",
+      "Improved API performance with Redis caching and optimized slow database queries, cutting average response times from ~600 ms to ~180 ms during peak traffic.",
+      "Automated AWS infrastructure provisioning with Terraform and Ansible, reducing environment setup time by 65% (from ~3 hours to ~1 hour) and removing manual configuration errors.",
+    ],
+    tech: [
+      "REST APIs",
+      "OAuth 2.0",
+      "JWT",
+      "Redis",
+      "AWS",
+      "Terraform",
+      "Ansible",
+    ],
+  },
+  {
+    role: "Software Developer",
+    company: "Devsinc",
+    companyUrl: "https://devsinc.com/",
+    logo: "devsinc.jpeg",
+    start: "Jul 2022",
+    end: "Mar 2023",
+    location: "Islamabad, Pakistan",
+    bullets: [
+      "Developed 3 scalable full-stack applications for US clients with Ruby on Rails and the MERN stack (MongoDB, Express, React, Node.js), from API design through deployment.",
+      "Partnered with QA to reach 100% test coverage on critical user flows across 3 major releases with RSpec and Jest, cutting post-launch bugs by 60%.",
+      "Recognized by leadership for resolving 30+ critical production issues through root-cause analysis, log investigation and performance debugging.",
+    ],
+    tech: [
+      "Ruby on Rails",
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "RSpec",
+      "Jest",
+    ],
+  },
+  {
+    role: "Software Engineering Intern",
+    company: "PTCL",
+    companyUrl: "https://ptcl.com.pk/",
+    logo: "ptcl.png",
+    start: "Jul 2021",
+    end: "Sep 2021",
+    location: "Islamabad, Pakistan",
+    bullets: [
+      "Completed a 3-month software engineering internship at Pakistan's largest telecom company after the third year at NUST.",
+      "Gained hands-on experience with the software development lifecycle in a large enterprise environment, including requirements, code reviews and testing.",
+      "Worked alongside engineering teams on internal tools and systems, learning how production software is built and maintained at scale.",
+      "Strengthened teamwork, professional communication and work within structured development processes.",
+    ],
+    tech: ["SDLC", "Code reviews", "Testing"],
+  },
+];
 
-        {
-          title: "Associate Software Developer",
-          company: "Veroke",
-          company_url: "https://www.veroke.com/",
-          logo_path: "veroke.png",
-          duration: "Jul 2023 - Aug 2024",
-          location: "Islamabad, Pakistan",
-          description: `
-          • Engineered robust and scalable full-stack solutions using Ruby on Rails and React.js, empowering the company to lead innovation in a highly competitive SaaS market.
-          • Led the development of a high-traffic healthcare platform (tabibgroup.net), serving over 1 million users, integrating complex features with seamless performance.
-          • Optimized and enhanced production-grade code for third-party integrations including Shopify and BigCommerce, improving system efficiency and boosting overall revenue streams.
-          • Designed and implemented interactive, responsive UI components using React.js and Bootstrap, improving user experience and retention by over 25%.
-          • Built and secured RESTful APIs with OAuth 2.0 and JWT, safeguarding sensitive data and maintaining regulatory compliance across global markets.
-          • Automated infrastructure deployments using Ansible and Terraform, reducing manual provisioning time by 65% while ensuring consistency across staging and production environments.
-          • Conducted comprehensive load testing and performance tuning with Redis caching and PostgreSQL optimizations, allowing the system to scale for 1M+ concurrent users.
-          • Collaborated closely with cross-functional QA teams, implementing automated testing pipelines and achieving 95%+ test coverage across major modules.
-          • Partnered with US-based clients to deliver bespoke, high-impact solutions tailored to specific industry verticals, enhancing client satisfaction and long-term retention.
-          • Mentored junior developers and interns, fostering a culture of knowledge sharing and continuous improvement within the engineering team.
-          • Recognized for advanced debugging and analytics capabilities, solving mission-critical issues under tight deadlines and contributing to multiple successful product launches.
-          `,
-
-          color: "#0071C5",
-        },
-        {
-          title: "Associate Software Developer",
-          company: "Devsinc",
-          company_url: "https://devsinc.com/",
-          logo_path: "devsinc.jpeg",
-          duration: "Jul 2022 - Jan 2023",
-          location: "Islamabad, Pakistan",
-          description: `  
-    • Developed 3+ scalable full-stack applications for US clients using Ruby on Rails and MERN stack.  
-    • Collaborated with QA teams to achieve 100% test coverage for 3 major releases, reducing post-launch bugs by 60%.  
-    • Recognized by leadership for resolving 30+ critical production issues through debugging and system optimization.  
-    • Contributed to production-level code for enterprise applications, ensuring high performance and scalability.  
-    • Worked with React.js and Bootstrap to build responsive and user-friendly front-end interfaces.  
-    • Assisted in integrating third-party APIs and services to enhance application functionality.  
-    • Participated in Agile sprints, delivering features on time and meeting client requirements.  
-    • Tools: Ruby on Rails, React.js, Node.js, MongoDB, PostgreSQL, Git, CI/CD, Bootstrap.  
-`,
-          color: "#0071C5",
-        },
-        {
-          title: "Networks Engineer (Intern)",
-          company: "PTCL",
-          company_url: "https://ptcl.com.pk/",
-          logo_path: "ptcl.png",
-          duration: "JUN 2021 - AUG 2021",
-          location: "Islamabad, Pakistan",
-          description: `  
-    • Monitored and maintained telecom network infrastructure serving 50,000+ subscribers, ensuring 99.9% uptime  
-    • Developed Excel VBA network maintenance tool that automated 15+ manual processes, saving 20+ hours weekly  
-    • Assisted in implementing critical security patches and firewall rules that reduced network vulnerabilities by 40%  
-`,
-          color: "#0071C5",
-        },
-      ],
-    },
-    {
-      title: "Volunteerships",
-      experiences: [
-        {
-          title: "GDG Student Volunteer",
-          company: "Google Developer Groups",
-          company_url: "https://gdg.community.dev/",
-          logo_path: "gdg.png",
-          duration: "Feb 2021 - Dec 2021",
-          location: "Work From Home",
-          description:
-            "Google Developer Group Surat Student Volunteer and Member.",
-          color: "#D83B01",
-        },
-        {
-          title: "GitHub Student Developer",
-          company: "GitHub",
-          company_url: "https://github.com/",
-          logo_path: "github.png",
-          duration: "Nov 2019 - JUL 2020",
-          location: "Work from Home",
-          description:
-            "Contribute to Open Source Community and Open Source Project.",
-          color: "#040f26",
-        },
-        {
-          title: "Google Local Guide",
-          company: "Google Map",
-          company_url: "https://maps.google.com/localguides/",
-          logo_path: "localguide.png",
-          duration: "Sep 2019 - JUN 2020",
-          location: "Work From Home",
-          description:
-            "Day-to-day responsibilities of helping local businesses to spread their business to the world. Helping users by writing reviews about different locations and spaces such as shops, malls, etc.",
-          color: "#D83B01",
-        },
-      ],
-    },
-  ],
-};
-
-// Projects Page
-const projectsHeader = {
-  title: "Projects",
-  description:
-    "My projects make use of a vast variety of latest technology tools. My best experience is to create NodeJS/Rails Backend Projects, Python Scripts, and React Project. Below are some of my projects. Note that not all of the mentioned projects are on GitHub yet.",
-  avatar_image_path: "projects_image.svg",
-};
-
-// Contact Page
-const contactPageData = {
-  contactSection: {
-    title: "Contact Me",
-    profile_image_path: "ali.jpg",
+const projects = [
+  {
+    name: "RAG Chatbot for Technical Documentation",
+    category: "AI Application",
+    date: "Mar 2025",
     description:
-      "You can contact me at the places mentioned below. I will try to get back to you as fast as I can. ",
+      "A context-aware chatbot built with LangChain and a RAG architecture that links car and machine manuals to LLMs, giving drivers and operators grounded answers from the documentation.",
+    tags: ["LangChain", "RAG", "LLMs", "Python"],
+    url: "https://github.com/itzalihamza7/Documentation-Chatbot",
   },
-  blogSection: {
-    title: "Blogs",
-    subtitle:
-      "I don't blog frequently but when I do something awesome, I do try to document it so it can be helpful to others. I write on Twitter.",
-    link: "https://twitter.com/alihamzaftcr7?t=Ewgol7pvS27XgShzGr930A&s=09",
-    avatar_image_path: "blogs_image.svg",
+  {
+    name: "GenAI YouTube Video Summarizer",
+    category: "AI Application",
+    date: "Feb 2025",
+    description:
+      "An AI-powered app built with the OpenAI API and Streamlit that generates customizable, multi-language video summaries.",
+    tags: ["OpenAI API", "Streamlit", "Python"],
+    url: "https://github.com/itzalihamza7/Youtube-Summariser",
   },
-};
+  {
+    name: "Face Mask Detection",
+    category: "Computer Vision",
+    date: "Dec 2024",
+    description:
+      "A deep learning system for real-time predictions on images and video streams with MobileNetV2 and OpenCV, including data preparation, training and validation of detection accuracy.",
+    tags: ["MobileNetV2", "OpenCV", "TensorFlow", "Python"],
+    url: "https://github.com/itzalihamza7/Face-mask-detection",
+  },
+  {
+    name: "Heart Attack Prediction and Analysis",
+    category: "Data Analysis",
+    date: "Oct 2024",
+    description:
+      "Exploratory data analysis and machine learning models (Logistic Regression, KNN, Decision Tree) that predict heart attack risk from clinical data features.",
+    tags: ["Python", "Scikit-learn", "EDA", "Jupyter"],
+    url: "https://github.com/itzalihamza7/Heart-Attack-Analysis",
+  },
+  {
+    name: "FHIR-Enabled Blockchain-based Healthcare Information System",
+    category: "Bachelor Final Year Project",
+    date: "2022",
+    description:
+      "A health information system built with Ethereum, the MERN stack (Express.js, React, Node.js, MongoDB) and FHIR standards to ensure interoperability and security of patient records, using cryptographic signatures and hashing.",
+    tags: ["Ethereum", "FHIR", "MERN", "Cryptography"],
+    url: null,
+  },
+  {
+    name: "Personal Portfolio with AI Assistant",
+    category: "Web Application",
+    date: "2026",
+    description:
+      "This website. A React portfolio with a built-in RAG assistant: questions are matched against a knowledge base built from the resume data and answered by Claude through a Cloudflare Worker.",
+    tags: ["React", "RAG", "Claude API", "Cloudflare Workers"],
+    url: "https://github.com/itzalihamza7/Portfolio",
+  },
+];
 
-const projects = {
-  data: [
-    {
-      id: "0",
-      name: "Al-Tabeeb",
-      url: "https://github.com/itzalihamza7/Al-Tabeeb",
-      description:
-        "A Decentralized online hospital management system where patients can securely get appointment from doctor and get the prescription after checkup.",
-      languages: [
-        { name: "Angularjs", iconifyClass: "logos-angular" },
-        { name: "Django", iconifyClass: "logos-django" },
-        { name: "Etherium", iconifyClass: "logos-ethereum" },
-      ],
-    },
-    {
-      id: "1",
-      name: "UI Radiance",
-      url: "https://github.com/itzalihamza7/UIRadiance",
-      description: "An app to test the UI skills",
-      languages: [
-        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
-        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
-        { name: "JavaScript", iconifyClass: "logos-javascript" },
-      ],
-    },
-    {
-      id: "13",
-      name: "BlogApp",
-      url: "https://github.com/itzalihamza7/BlogApp",
-      description:
-        "A website where we can share blogs, edit them, comment on them , like and many more features",
-      languages: [
-        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
-        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
-        { name: "Bootstrap", iconifyClass: "logos-bootstrap" },
-        { name: "Rails", iconifyClass: "logos-rails" },
-      ],
-    },
-    {
-      id: "2",
-      name: "Ecommerece Store",
-      url: "https://github.com/itzalihamza7/Ecommerece",
-      description: "An Ecommerece store app to sell and buy products",
-      languages: [
-        { name: "Rails", iconifyClass: "logos-rails" },
-        { name: "ReactJs", iconifyClass: "logos-react" },
-        { name: "Stripe", iconifyClass: "logos-stripe" },
-      ],
-    },
-    {
-      id: "3",
-      name: "Ewallet",
-      url: "https://github.com/itzalihamza7/Ewallet",
-      description:
-        "An online wallet to where we can send and receive money from others",
-      languages: [
-        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
-        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
-        { name: "Rails", iconifyClass: "logos-rails" },
-      ],
-    },
-    {
-      id: "4",
-      name: "NFT Staking APP",
-      url: "https://github.com/itzalihamza7/NFT-Staking-APP",
-      description: "An app to stake the NFts",
-      languages: [
-        { name: "Etherium", iconifyClass: "logos-ethereum" },
-        { name: "React", iconifyClass: "logos-react" },
-      ],
-    },
-    {
-      id: "5",
-      name: "Social Media Memories",
-      url: "https://github.com/itzalihamza7/social-media-memories",
-      description: "An app to store the memories online",
-      languages: [
-        { name: "JavaScript", iconifyClass: "logos-javascript" },
-        { name: "HTML5", iconifyClass: "vscode-icons:file-type-html" },
-        { name: "CSS3", iconifyClass: "vscode-icons:file-type-css" },
-        { name: "Bootstrap", iconifyClass: "logos-bootstrap" },
-        { name: "React", iconifyClass: "logos-react" },
-      ],
-    },
-    {
-      id: "6",
-      name: "personal-portfolio",
-      url: "https://github.com/itzalihamza7/Portfolio",
-      description: "An app to show my portfolio",
-      languages: [
-        { name: "JavaScript", iconifyClass: "logos-javascript" },
-        { name: "React", iconifyClass: "logos-react" },
-      ],
-    },
-    {
-      id: "7",
-      name: "BurgerApp",
-      url: "https://github.com/itzalihamza7/BurgerApp",
-      description: "App to test reactjs skills",
-      languages: [{ name: "React", iconifyClass: "logos-react" }],
-    },
-    {
-      id: "8",
-      name: "Heart Attack Analysis",
-      url: "https://github.com/itzalihamza7/Heart-Attack-Analysis",
-      description:
-        "A machine learning project to analyze and classify heart attack risk using various models.",
-      languages: [
-        { name: "Python", iconifyClass: "logos-python" },
-        { name: "NumPy", iconifyClass: "logos-numpy" },
-        { name: "Matplotlib", iconifyClass: "logos-matplotlib" },
-        { name: "Jupyter Notebook", iconifyClass: "logos-jupyter" },
-        {
-          name: "Data Visualization",
-          iconifyClass: "logos-data-visualization",
-        },
-      ],
-    },
-    {
-      id: "9",
-      name: "Face Mask Detection",
-      url: "https://github.com/itzalihamza7/Face-mask-detection",
-      description:
-        "A deep learning model to detect whether people are wearing face masks or not.",
-      languages: [
-        { name: "Python", iconifyClass: "logos-python" },
-        { name: "OpenCV", iconifyClass: "logos-opencv" },
-        { name: "TensorFlow", iconifyClass: "logos-tensorflow" },
-        { name: "Keras", iconifyClass: "logos-keras" },
-      ],
-    },
-    {
-      id: "10",
-      name: "Youtube Summariser",
-      url: "https://github.com/itzalihamza7/Youtube-Summariser",
-      description: "A tool to summarize YouTube videos using NLP techniques.",
-      languages: [
-        { name: "Python", iconifyClass: "logos-python" },
-        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
-        { name: "Streamlit", iconifyClass: "logos-streamlit" },
-      ],
-    },
-    {
-      id: "11",
-      name: "Documentation Chatbot",
-      url: "https://github.com/itzalihamza7/Documentation-Chatbot",
-      description:
-        "A chatbot that answers queries based on documentation using language models.",
-      languages: [
-        { name: "Python", iconifyClass: "logos-python" },
-        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
-      ],
-    },
-    {
-      id: "12",
-      name: "AI Demo Agent",
-      url: "https://github.com/itzalihamza7/AI-demo-Agent",
-      description:
-        "A demo agent built using OpenAI APIs and Next.js to showcase AI capabilities.",
-      languages: [
-        { name: "Next.js", iconifyClass: "logos-nextjs" },
-        { name: "OpenAI", iconifyClass: "logos-openai-icon" },
-      ],
-    },
-  ],
-};
+// Smaller repositories listed under "More on GitHub".
+const moreProjects = [
+  {
+    name: "AI Demo Agent",
+    description: "A demo agent built with the OpenAI API and Next.js.",
+    tags: ["Next.js", "OpenAI API"],
+    url: "https://github.com/itzalihamza7/AI-demo-Agent",
+  },
+  {
+    name: "Al-Tabeeb",
+    description:
+      "A decentralized hospital management system for booking appointments and receiving prescriptions.",
+    tags: ["Angular", "Django", "Ethereum"],
+    url: "https://github.com/itzalihamza7/Al-Tabeeb",
+  },
+  {
+    name: "E-commerce Store",
+    description:
+      "An online store to sell and buy products, with Stripe payments.",
+    tags: ["Rails", "React", "Stripe"],
+    url: "https://github.com/itzalihamza7/Ecommerece",
+  },
+  {
+    name: "NFT Staking App",
+    description: "An app for staking NFTs.",
+    tags: ["Ethereum", "React"],
+    url: "https://github.com/itzalihamza7/NFT-Staking-APP",
+  },
+  {
+    name: "BlogApp",
+    description: "A blogging platform with posts, editing, comments and likes.",
+    tags: ["Rails", "Bootstrap"],
+    url: "https://github.com/itzalihamza7/BlogApp",
+  },
+  {
+    name: "E-wallet",
+    description: "An online wallet to send and receive money.",
+    tags: ["Rails"],
+    url: "https://github.com/itzalihamza7/Ewallet",
+  },
+  {
+    name: "Social Media Memories",
+    description: "An app to store and share memories online.",
+    tags: ["React", "JavaScript"],
+    url: "https://github.com/itzalihamza7/social-media-memories",
+  },
+];
+
+const education = [
+  {
+    degree: "Master of Science, Web and Data Science",
+    school: "Universität Koblenz",
+    location: "Koblenz, Germany",
+    logo: "uni-koblenz.png",
+    url: "https://www.uni-koblenz.de/en",
+    start: "Apr 2025",
+    end: "Present",
+    courses: [
+      "Introduction to Web Science",
+      "Engineering Web and Data-intensive Systems",
+      "Advanced Topics in Web-based, Data-intensive Software and its Security",
+      "Machine Learning",
+      "Data Science",
+      "Big Data",
+      "Graph Theory",
+      "Artificial Intelligence",
+      "Recommender Systems",
+    ],
+  },
+  {
+    degree: "Bachelor of Science, Computer Science",
+    school: "National University of Sciences and Technology (NUST)",
+    location: "Islamabad, Pakistan",
+    logo: "nust.png",
+    url: "https://nust.edu.pk/",
+    start: "Sep 2018",
+    end: "Jul 2022",
+    courses: [
+      "Web Engineering",
+      "Human Computer Interaction",
+      "Object Oriented Programming",
+      "Database Systems",
+      "Advanced Programming",
+      "Distributed Computing",
+      "Mobile Application Development for SMEs",
+      "Artificial Intelligence",
+      "Data Structures and Algorithms",
+      "Probability and Statistics",
+      "Numerical Analysis",
+      "Digital Logic Design",
+      "Computer Architecture and Organization",
+    ],
+  },
+  {
+    degree: "Intermediate, Pre-Engineering",
+    school: "Punjab Group of Colleges",
+    location: "Pakistan",
+    logo: "pgc.png",
+    url: "https://pgc.edu/",
+    start: "2016",
+    end: "2018",
+    courses: [],
+  },
+];
+
+const certifications = [
+  { name: "Software Engineer", issuer: "HackerRank", date: null, url: null },
+  { name: "Frontend Developer", issuer: null, date: null, url: null },
+  {
+    name: "Artificial Intelligence Essentials",
+    issuer: "Coursera",
+    date: null,
+    url: null,
+  },
+  {
+    name: "Introduction to Generative AI Learning Path",
+    issuer: "Google Cloud",
+    date: "02/2024 – 05/2025",
+    url: null,
+  },
+  {
+    name: "MERN Stack Front to Back",
+    issuer: "Coursera",
+    date: "10/2022 – 12/2022",
+    url: null,
+  },
+];
+
+const volunteering = [
+  {
+    role: "IT and Management",
+    organization: "HONET ICT Conference",
+    location: "Islamabad, Pakistan",
+    start: "Oct 2018",
+    end: "Dec 2022",
+  },
+];
 
 export {
   settings,
-  greeting,
-  socialMediaLinks,
-  skills,
-  degrees,
-  certifications,
+  profile,
+  socialLinks,
+  highlights,
+  achievements,
+  focusAreas,
+  skillGroups,
+  coreStack,
+  spokenLanguages,
   experience,
-  projectsHeader,
-  contactPageData,
   projects,
+  moreProjects,
+  education,
+  certifications,
+  volunteering,
 };

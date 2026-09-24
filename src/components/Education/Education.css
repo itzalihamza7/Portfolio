@@ -1,0 +1,146 @@
+.degrees {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.degree {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg);
+  box-shadow: none;
+}
+
+.degree__logo {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.degree__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.degree__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.degree__title {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.degree__school {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.degree__school a {
+  font-weight: 500;
+}
+
+.degree__dates {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.degree__courses {
+  margin-top: 14px;
+}
+
+.degree__courses summary {
+  width: fit-content;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.degree__courses[open] summary {
+  margin-bottom: 12px;
+}
+
+.degree__courses .tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 32px 48px;
+  margin-top: 56px;
+}
+
+.credentials__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.credentials__title svg {
+  color: var(--accent);
+}
+
+.credential-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credential {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.credential:first-child {
+  padding-top: 0;
+}
+
+.credential,
+.credential > a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.credential__name {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.credential__meta {
+  color: var(--text-subtle);
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  .degree {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .degree__logo {
+    width: 48px;
+    height: 48px;
+  }
+}
