@@ -12,7 +12,7 @@ export default function About() {
       id="about"
       eyebrow="About"
       // Non-breaking hyphen keeps "full-stack" together when the title wraps.
-      title={"Backend at heart, full\u2011stack in practice"}
+      title={"Full\u2011stack development with a focus on backend and AI"}
       alt
     >
       <div className="about__grid">
