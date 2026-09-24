@@ -36,7 +36,10 @@ export default function Hero({ onAsk }) {
           )}
           <h1 className="hero__title">
             Hi, I'm {profile.name}.
-            <span className="hero__role">{profile.headline}</span>
+            <span className="hero__role">
+              {/* Non-breaking hyphens keep "Full-Stack" on one line. */}
+              {profile.headline.replace(/-/g, "\u2011")}
+            </span>
           </h1>
           <p className="hero__intro">{profile.intro}</p>
           <p className="hero__meta">

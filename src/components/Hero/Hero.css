@@ -165,10 +165,10 @@
   position: relative;
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 28px;
   overflow: hidden;
-  background: linear-gradient(160deg, #f6e9d7, #e9d3b8);
+  background: #5b5c5e;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
 }
@@ -177,7 +177,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center 20%;
 }
 
 .highlights {

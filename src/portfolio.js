@@ -21,7 +21,7 @@ const profile = {
   location: "Koblenz, Germany",
   email: "alihamzaali44@gmail.com",
   website: "https://www.alihamza.co",
-  photo: "ali.jpg",
+  photo: "ali-2026.jpg",
   resumeLink:
     "https://drive.google.com/file/d/1Te5n9U9qKroEnyLnHM8iaya9jqHCWFVB/view?usp=sharing",
   intro:
@@ -423,7 +423,7 @@ const projectGroups = [
   },
   {
     id: "labs",
-    title: "Labs and experiments",
+    title: "Side projects",
     description:
       "Smaller builds from coursework and self-study in machine learning, blockchain and web development.",
     layout: "compact",
@@ -431,12 +431,15 @@ const projectGroups = [
 ];
 
 // `highlight` marks the projects the assistant leads with when asked what Ali
-// has worked on. `url` is a live site, `repo` is source code.
+// has worked on. `url` is a live site, `repo` is source code. Cards show the
+// short `summary` when there is one; the assistant uses the full description.
 const projects = [
   {
     name: "Al-Tabeeb",
     group: "products",
     type: "Healthcare platform",
+    summary:
+      "Tabib Group's healthcare platform in Saudi Arabia, connecting patients with doctors and clinics across web and mobile apps. Its Rails API still runs in production.",
     description:
       "A healthcare platform in Saudi Arabia (Tabib Group) that connects patients with doctors and clinics, including offers on clinic and care services, across web and mobile apps. Its Ruby on Rails API still serves the platform in production.",
     tags: ["Ruby on Rails", "REST API", "React"],
@@ -447,6 +450,8 @@ const projects = [
     name: "Iwish",
     group: "products",
     type: "Marketplace",
+    summary:
+      "A peer-to-peer marketplace where travellers fulfil wishes for items from abroad and get paid for it.",
     description:
       "A peer-to-peer marketplace for items from abroad: users post a wish for something they need from another country, and travellers fulfil the wish and get paid for it.",
     tags: ["Node.js", "React"],
@@ -457,6 +462,8 @@ const projects = [
     group: "genai",
     type: "RAG application",
     date: "2026",
+    summary:
+      "The assistant on this site: BM25 retrieval over the resume data, answered by an OpenAI model through a Cloudflare Worker.",
     description:
       "The assistant on this site. Questions are matched against a knowledge base built from the resume data with BM25 retrieval, then answered by an OpenAI model through a Cloudflare Worker, with a local fallback.",
     tags: ["RAG", "OpenAI API", "React", "Cloudflare Workers"],
@@ -467,6 +474,8 @@ const projects = [
     group: "genai",
     type: "RAG application",
     date: "Mar 2025",
+    summary:
+      "A LangChain RAG chatbot that answers drivers' and operators' questions from car and machine manuals.",
     description:
       "A context-aware chatbot built with LangChain and a RAG architecture that links car and machine manuals to LLMs, giving drivers and operators grounded answers from the documentation.",
     tags: ["LangChain", "RAG", "LLMs", "Python"],
@@ -494,6 +503,8 @@ const projects = [
     name: "10XCoach",
     group: "client",
     type: "AI business coaching",
+    summary:
+      "An AI business coaching platform for U.S. entrepreneurs, running on a Node.js and Express API with JWT and Google sign-in.",
     description:
       "A U.S. AI-driven coaching platform that gives entrepreneurs and small businesses structured coaching in strategy, sales, marketing, finance and operations, combining AI coaches with scorecards, planning frameworks and accountability tools. Runs on a Node.js and Express API with JWT and Google sign-in.",
     tags: [
@@ -511,6 +522,8 @@ const projects = [
     name: "Friendsy",
     group: "client",
     type: "AI voice agents",
+    summary:
+      "A platform for building and scaling AI voice agents for phone support, with Next.js API routes and Paddle billing.",
     description:
       "A platform for building, deploying and scaling AI voice agents for phone-based customer support, integrating leading AI and speech providers to automate conversations around the clock, with Next.js API routes and Paddle billing.",
     tags: ["Next.js API routes", "Paddle", "React", "Next.js", "Tailwind CSS"],
@@ -520,6 +533,8 @@ const projects = [
     name: "Nexmuv",
     group: "client",
     type: "Moving and logistics",
+    summary:
+      "A U.S. moving platform with instant pricing and shipment tracking, built on Supabase Edge Functions, Tinybird and Mapbox.",
     description:
       "A U.S. platform connecting customers with vetted movers for residential, corporate and office relocations, with instant pricing, shipment tracking, packing services and financing. Built on Supabase with Edge Functions for user creation and device-tracking webhooks, Tinybird event analytics and Mapbox geocoding.",
     tags: [
@@ -539,6 +554,8 @@ const projects = [
     name: "Chainbox",
     group: "client",
     type: "On-chain trading",
+    summary:
+      "An on-chain trading platform for crypto and synthetic assets, serving Hyperliquid market data through Next.js API routes with Privy auth.",
     description:
       "A blockchain-based trading platform for crypto and synthetic assets on smart contract infrastructure, with tokenized asset exposure, on-chain custody and 24/7 trading. Market data, candles and trades are served through Next.js API routes on top of the Hyperliquid API, with Privy for wallet authentication.",
     tags: [
@@ -560,6 +577,8 @@ const projects = [
     group: "research",
     type: "Universität Koblenz",
     date: "2025 – present",
+    summary:
+      "Integrates data from several ERP systems into an explorable knowledge graph, with Spring Boot services and Vue.js visualizations.",
     description:
       "An approach to integrating and analyzing ERP data: a pipeline connects enterprise systems through adapters into a social network based knowledge graph, with Spring Boot services and Vue.js visualizations for exploring it.",
     tags: ["Java", "Spring Boot", "Vue.js", "Knowledge graphs"],
@@ -569,6 +588,8 @@ const projects = [
     group: "research",
     type: "Final year project, NUST",
     date: "2022",
+    summary:
+      "A health information system that uses Ethereum and FHIR to keep patient records interoperable and secure.",
     description:
       "A health information system that uses Ethereum and FHIR standards to keep patient records interoperable and secure, with cryptographic signatures and hashing.",
     tags: ["Ethereum", "AngularJS", "Django", "FHIR"],
