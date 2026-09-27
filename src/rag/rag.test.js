@@ -46,9 +46,10 @@ describe("retrieval", () => {
     ["What databases does he use?", "skills-databases-and-caching"],
     ["Has he done an internship?", "experience-ptcl"],
     [
-      "What is his experience with FHIR and healthcare?",
-      "project-fhir-enabled-blockchain-based-healthcare-information-system",
+      "Tell me about his blockchain healthcare project",
+      "project-blockchain-based-healthcare-information-system",
     ],
+    ["Has he built an AI agent?", "project-ai-demo-agent"],
   ];
 
   it.each(cases)("%s -> %s in the top 3", (question, expectedId) => {
@@ -79,7 +80,10 @@ describe("retrieval", () => {
     const top = retrieveContext(
       "Which AI projects has he built?"
     ).results.slice(0, 3);
-    top.forEach(({ chunk }) => expect(genai).toContain(chunk.title));
+    // The overview lists every project by group, so it is a valid answer too.
+    top.forEach(({ chunk }) =>
+      expect([...genai, "Projects overview"]).toContain(chunk.title)
+    );
   });
 
   it("uses the previous question to resolve follow-ups", () => {

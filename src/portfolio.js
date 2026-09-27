@@ -485,15 +485,14 @@ const projects = [
   },
   {
     name: "RAG Chatbot for Technical Documentation",
-    featured: true,
     group: "genai",
     type: "RAG application",
     date: "Mar 2025",
     summary:
-      "A LangChain RAG chatbot that answers drivers' and operators' questions from car and machine manuals.",
+      "Question answering over Markdown documentation such as machine manuals, built on a LangChain RAG tutorial and extended for large document sets.",
     description:
-      "A context-aware chatbot built with LangChain and a RAG architecture that links car and machine manuals to LLMs, giving drivers and operators grounded answers from the documentation.",
-    tags: ["LangChain", "RAG", "LLMs", "Python"],
+      "Question answering over Markdown documentation such as car and machine manuals: documents are chunked, embedded with OpenAI into a Chroma vector database, and an OpenAI chat model answers from the three most relevant chunks, citing its sources. Built on pixegami's public LangChain RAG tutorial; Ali extended it with batched indexing for large document sets, automatic NLTK setup and .env-based configuration.",
+    tags: ["LangChain", "RAG", "Chroma", "OpenAI API", "Python"],
     repo: "https://github.com/itzalihamza7/Documentation-Chatbot",
   },
   {
@@ -501,17 +500,24 @@ const projects = [
     group: "genai",
     type: "LLM application",
     date: "Feb 2025",
+    summary:
+      "A Streamlit app that summarizes YouTube videos from their transcripts with OpenAI, adapted from an open-source BART-based summarizer.",
     description:
-      "An AI-powered app built with the OpenAI API and Streamlit that generates customizable, multi-language video summaries.",
+      "A Streamlit app that fetches a YouTube video's transcript and summarizes it with OpenAI's GPT-3.5 Turbo. Adapted from Niez Gharbi's open-source YouTube Summariser (Apache 2.0): Ali replaced its local BART model with the OpenAI chat API and .env-based configuration.",
     tags: ["OpenAI API", "Streamlit", "Python"],
     repo: "https://github.com/itzalihamza7/Youtube-Summariser",
   },
   {
     name: "AI Demo Agent",
+    featured: true,
     group: "genai",
     type: "AI agent",
-    description: "A demo agent built with the OpenAI API and Next.js.",
-    tags: ["OpenAI API", "Next.js"],
+    date: "2025",
+    summary:
+      "A voice-controlled agent that runs live product demos in a real browser: GPT-4o plans the steps, Playwright performs them and the agent explains aloud.",
+    description:
+      "A voice-controlled AI agent that runs live product demos in a real browser. Speech is captured in the browser with OpenAI Whisper as a fallback, GPT-4o and GPT-4o-mini turn each request into browser actions, Playwright performs them in a visible Chromium window, and OpenAI text-to-speech explains every step. A Next.js control panel talks to an Express and Socket.IO server, new websites are added as JSON knowledge files, and every session is recorded with a transcript and action log.",
+    tags: ["TypeScript", "Next.js", "Playwright", "OpenAI API", "Socket.IO"],
     repo: "https://github.com/itzalihamza7/AI-demo-Agent",
   },
   {
@@ -601,15 +607,15 @@ const projects = [
     tags: ["Java", "Spring Boot", "Vue.js", "Knowledge graphs"],
   },
   {
-    name: "FHIR-Enabled Blockchain-based Healthcare Information System",
+    name: "Blockchain-based Healthcare Information System",
     group: "research",
     type: "Final year project, NUST",
     date: "2022",
     summary:
-      "A health information system that uses Ethereum and FHIR to keep patient records interoperable and secure.",
+      "A hospital information system where records live on IPFS, their hashes on Ethereum, and a smart contract controls who can read and write them.",
     description:
-      "A health information system that uses Ethereum and FHIR standards to keep patient records interoperable and secure, with cryptographic signatures and hashing.",
-    tags: ["Ethereum", "AngularJS", "Django", "FHIR"],
+      "A hospital information system (Al-Tabeeb) where patient information and medical records are stored on IPFS, their hashes are written to an Ethereum smart contract, and the contract restricts access by role (admin, doctor, patient). Angular dashboards for admins, doctors and patients sit on web3.js, with a Django REST API for doctors, patients and appointments.",
+    tags: ["Solidity", "Ethereum", "IPFS", "Angular", "Django"],
     repo: "https://github.com/itzalihamza7/Al-Tabeeb",
   },
   {
@@ -626,16 +632,16 @@ const projects = [
     group: "labs",
     date: "Oct 2024",
     description:
-      "Exploratory data analysis and Logistic Regression, KNN and Decision Tree models that predict heart attack risk from clinical data.",
-    tags: ["Python", "Scikit-learn", "EDA"],
+      "Exploratory analysis of clinical data from 303 patients, plus a classification workflow from Global AI Hub's Machine Learning Bootcamp comparing Logistic Regression, Decision Tree, Random Forest, XGBoost, LightGBM and CatBoost.",
+    tags: ["Python", "pandas", "Scikit-learn", "XGBoost"],
     repo: "https://github.com/itzalihamza7/Heart-Attack-Analysis",
   },
   {
     name: "E-commerce Store",
     group: "labs",
     description:
-      "An online store to sell and buy products, with Stripe payments.",
-    tags: ["Rails", "React", "Stripe"],
+      "A multi-vendor Rails store with Stripe Checkout and webhooks, Customer, Seller and Admin roles, product galleries on Cloudinary, promo codes and an admin panel.",
+    tags: ["Ruby on Rails", "PostgreSQL", "Stripe", "Devise"],
     repo: "https://github.com/itzalihamza7/Ecommerece",
   },
 ];
