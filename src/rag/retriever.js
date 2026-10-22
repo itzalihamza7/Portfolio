@@ -50,6 +50,9 @@ const SYNONYMS = {
   hire: ["contact", "availability"],
   reach: ["contact", "email"],
   internship: ["intern"],
+  hallucination: ["hallucinated", "grounding"],
+  reduce: ["reduced", "cut"],
+  accuracy: ["accurate"],
 };
 
 export function stem(token) {

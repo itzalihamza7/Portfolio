@@ -28,7 +28,7 @@ describe("retrieval", () => {
     ["What is Ali doing right now?", "experience-universitat-koblenz"],
     ["What did he do at Veroke?", "experience-veroke"],
     ["Has he worked with Redis caching?", "experience-veroke"],
-    ["Does he know Spring Boot?", "experience-universitat-koblenz"],
+    ["Does he know Spring Boot?", "skills-backend"],
     [
       "Tell me about the face mask detection project",
       "project-face-mask-detection",
@@ -50,6 +50,11 @@ describe("retrieval", () => {
       "project-blockchain-based-healthcare-information-system",
     ],
     ["Has he built an AI agent?", "project-ai-demo-agent"],
+    [
+      "What is his research about?",
+      "project-sonbo-social-network-of-business-objects",
+    ],
+    ["How did he reduce hallucinations?", "experience-universitat-koblenz"],
   ];
 
   it.each(cases)("%s -> %s in the top 3", (question, expectedId) => {

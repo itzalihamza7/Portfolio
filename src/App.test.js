@@ -25,7 +25,7 @@ it("renders every section", () => {
     }
   );
   expect(container.textContent).toContain(
-    "Research Assistant at Universität Koblenz"
+    "Research Assistant, Generative AI and Knowledge Graphs"
   );
 });
 

@@ -25,11 +25,11 @@ const profile = {
   resumeLink:
     "https://drive.google.com/file/d/1Te5n9U9qKroEnyLnHM8iaya9jqHCWFVB/view?usp=sharing",
   intro:
-    "I build backend systems and APIs with Ruby on Rails, Node.js and Spring Boot, and bring generative AI into products with RAG and LLM-powered features.",
+    "I build full-stack products and the generative AI inside them: RAG, LLM-powered search and natural-language interfaces on Node.js, Python and Ruby on Rails backends.",
   summary:
-    "Full-stack engineer who builds web products end to end, from APIs and databases to the interfaces people actually use. Over the past 3+ years, shipped applications for product companies and international freelance clients with Ruby on Rails and Node.js on the backend and React and Vue.js on the frontend. Focused on making systems fast and reliable: clean REST APIs secured with OAuth 2.0 and JWT, performance through Redis caching and database optimization, and automated deployments on AWS with Terraform and Ansible. Brings data and AI into products, from personalized recommendation features to interactive dashboards. Currently a Research Assistant at Universität Koblenz while completing a Master's in Web and Data Science, building Spring Boot services and Vue.js visualizations that connect data from multiple ERP systems into an explorable knowledge graph.",
+    "Full-stack engineer who builds web products end to end, from APIs and databases to the interfaces people actually use. Over the past 3+ years, shipped applications for product companies and international freelance clients, working with Node.js and Python on the backend and React and Vue.js on the frontend. Cares most about making systems fast and reliable: clean REST APIs secured with OAuth 2.0 and JWT, performance through Redis caching and database optimization, and automated deployments on AWS with Terraform and Ansible. Brings data and AI into products, from recommendation features that personalize the user experience to interactive dashboards that turn raw datasets into clear insights. Currently a Research Assistant (Generative AI and Knowledge Graphs) at Universität Koblenz while completing a Master's in Web and Data Science. On the SoNBO project, uses Python, LLMs, RAG and prompt engineering to let users query data from multiple ERP systems in plain language through an explorable knowledge graph, supported by Spring Boot services and Vue.js visualizations. Top skills: context engineering, prompt engineering and Retrieval Augmented Generation.",
   about:
-    "I'm a full-stack developer with 3+ years of experience building web products for product companies and international clients, mostly on the backend: REST APIs in Ruby on Rails and Node.js, secured with OAuth 2.0 and JWT, made fast with Redis and query optimization, and deployed on AWS with Terraform and Ansible. I bring generative AI into products with RAG and LLM features. Today I'm a Research Assistant at Universität Koblenz while completing my Master's in Web and Data Science.",
+    "I'm a full-stack developer with 3+ years of experience building web products for product companies and international clients, with Node.js, Python and Ruby on Rails on the backend and React and Vue.js on the frontend. I care about fast, reliable systems and I bring generative AI into them. As a Research Assistant at Universität Koblenz I build a natural-language query layer over ERP data with LLMs, graph-based RAG and prompt engineering, while completing my Master's in Web and Data Science.",
   availability:
     "Available for full-time roles in full-stack, backend and AI engineering. Email is the best way to get in touch.",
 };
@@ -42,8 +42,8 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    handle: "alihamza1234",
-    url: "https://www.linkedin.com/in/alihamza1234/",
+    handle: "alihamzas",
+    url: "https://www.linkedin.com/in/alihamzas/",
   },
   {
     name: "Email",
@@ -55,13 +55,18 @@ const socialLinks = [
 // Headline numbers shown under the hero.
 const highlights = [
   { value: "3+", label: "years shipping production software" },
-  { value: "5M+", label: "registered users on a platform I built APIs for" },
-  { value: "~180 ms", label: "peak API response time, down from ~600 ms" },
+  {
+    value: "58% → 84%",
+    label: "RAG answer accuracy with graph-based retrieval",
+  },
+  { value: "1M+", label: "registered users on a platform I built APIs for" },
   { value: "10+", label: "full-stack projects for international clients" },
 ];
 
 const achievements = [
-  "Built secure REST APIs with OAuth 2.0, JWT and role-based access control for a platform with 5M+ registered users.",
+  "Raised answer accuracy of a natural-language query layer over ERP data from 58% (plain vector RAG) to 84% with graph-based retrieval, and cut hallucinated answers by ~60% through prompt and context engineering.",
+  "Built an LLM evaluation pipeline with a golden dataset and LLM-as-judge scoring, cutting the time to test a prompt or retrieval change from about a day to under 30 minutes.",
+  "Built secure REST APIs with OAuth 2.0, JWT and role-based access control for a platform with 1M+ registered users.",
   "Cut average API response times from ~600 ms to ~180 ms during peak traffic through Redis caching and query optimization.",
   "Reduced environment setup time by 65% (from ~3 hours to ~1 hour) with Terraform and Ansible, removing manual configuration errors.",
   "Reduced deployment time by 75% and enabled zero-downtime releases with CI/CD on AWS.",
@@ -74,14 +79,14 @@ const achievements = [
 
 const focusAreas = [
   {
-    title: "Backend and APIs",
-    text:
-      "Secure REST APIs, authentication, caching and data models with Ruby on Rails, Node.js and Spring Boot, deployed on AWS with Terraform and Ansible.",
-  },
-  {
     title: "Generative AI and RAG",
     text:
-      "Retrieval Augmented Generation, LLM integrations with LangChain and the OpenAI API, and AI-powered recommendation features inside real products.",
+      "Natural-language interfaces over real data with LLMs, graph-based RAG, prompt and context engineering, and evaluation with golden datasets and LLM-as-judge scoring.",
+  },
+  {
+    title: "Backend and APIs",
+    text:
+      "Secure REST APIs, authentication, caching and data models with Node.js, Python, Ruby on Rails and Spring Boot, deployed on AWS with Terraform and Ansible.",
   },
   {
     title: "Full-stack product delivery",
@@ -109,6 +114,11 @@ const skillGroups = [
     items: [
       "Large language models",
       "Retrieval Augmented Generation",
+      "Graph-based RAG",
+      "Prompt engineering",
+      "Context engineering",
+      "LLM evaluation (golden datasets, LLM-as-judge)",
+      "Knowledge graphs",
       "LangChain",
       "OpenAI API",
       "TensorFlow",
@@ -280,7 +290,7 @@ const spokenLanguages = [
 
 const experience = [
   {
-    role: "Research Assistant",
+    role: "Research Assistant, Generative AI and Knowledge Graphs",
     company: "Universität Koblenz",
     companyUrl: "https://www.uni-koblenz.de/en",
     logo: "uni-koblenz.png",
@@ -288,16 +298,23 @@ const experience = [
     end: "Present",
     location: "Koblenz, Germany",
     bullets: [
-      "Contributing to the SoNBO (Social Network of Business Objects) project, an innovative approach to information integration for ERP systems.",
-      "Supporting a data pipeline that connects multiple enterprise systems through adapters to an exploration layer, integrating business objects into a social network based knowledge graph for ERP data analysis and visualization.",
-      "Building backend services with Spring Boot (Java) and frontend visualizations with Vue.js.",
+      "Contributing to SoNBO (Social Network of Business Objects), a research project on integrating data from multiple ERP systems into a social network based knowledge graph that users can explore and query in plain language.",
+      "Built a natural-language query layer over 3 ERP systems using Python, LLMs and RAG, letting users ask questions about business objects without writing SQL or knowing each system's data model.",
+      "Designed a graph-based retrieval approach over a knowledge graph of ~40,000 business objects across 15 object types, raising answer accuracy from 58% (plain vector RAG baseline) to 84% on a 150-question evaluation set.",
+      "Reduced hallucinated answers by ~60% through prompt and context engineering, including schema-aware prompts and grounding answers in retrieved graph paths with source references.",
+      "Built an evaluation pipeline with a golden dataset and LLM-as-judge scoring, cutting the time to test a prompt or retrieval change from about a day of manual checks to under 30 minutes.",
+      "Developed 5 Spring Boot (Java) REST services connecting ERP adapters to the exploration layer, plus 4 interactive Vue.js views for exploring relationships between business objects.",
+      "Kept median response time under 5 seconds for natural-language queries on the research prototype through caching and query optimization.",
+      "In a user study, cut the time to answer cross-system business questions by ~50% compared with searching the ERP systems manually.",
     ],
     tech: [
-      "Java",
+      "Python",
+      "LLMs",
+      "Graph-based RAG",
+      "Prompt engineering",
+      "Knowledge graphs",
       "Spring Boot",
       "Vue.js",
-      "Knowledge graphs",
-      "Data pipelines",
     ],
   },
   {
@@ -311,6 +328,7 @@ const experience = [
     bullets: [
       "Delivered 10+ full-stack projects for international clients with Ruby on Rails, Node.js and React, from requirements gathering through deployment and ongoing support.",
       "Selected clients include 10XCoach (AI business coaching), Friendsy (AI voice agents), Nexmuv (moving logistics) and Chainbox (on-chain trading).",
+      "Integrated generative AI features into client applications using LLM APIs, prompt engineering and RAG, enabling intelligent search and automated content generation.",
       "Built AI-powered recommendation features that personalized content for end users, increasing user engagement by 35%.",
       "Set up CI/CD pipelines on AWS with Ansible, reducing deployment time by 75% and enabling zero-downtime releases.",
       "Improved frontend load times by 40% through React performance optimization, and scaled Rails APIs to support 5x more users with Redis caching.",
@@ -338,7 +356,7 @@ const experience = [
     end: "Aug 2024",
     location: "Islamabad, Pakistan",
     bullets: [
-      "Built secure REST APIs with OAuth 2.0 and JWT authentication for a platform serving 5M+ registered users, including role-based access control for sensitive data.",
+      "Built secure REST APIs with OAuth 2.0 and JWT authentication for a platform serving 1M+ registered users, including role-based access control for sensitive data.",
       "Improved API performance with Redis caching and optimized slow database queries, cutting average response times from ~600 ms to ~180 ms during peak traffic.",
       "Automated AWS infrastructure provisioning with Terraform and Ansible, reducing environment setup time by 65% (from ~3 hours to ~1 hour) and removing manual configuration errors.",
       "Worked on Al-Tabeeb, Tabib Group's healthcare platform, with a Ruby on Rails backend and a Node.js messaging service, and built the Node.js APIs for Iwish, a peer-to-peer marketplace app.",
@@ -443,6 +461,25 @@ const projectGroups = [
 // code. The page shows the short `summary` when there is one; the assistant
 // uses the full description.
 const projects = [
+  {
+    name: "SoNBO: Social Network of Business Objects",
+    featured: true,
+    group: "research",
+    type: "Universität Koblenz",
+    date: "2025 – present",
+    summary:
+      "Ask questions about data in 3 ERP systems in plain language: graph-based RAG over a knowledge graph of ~40,000 business objects, 84% answer accuracy.",
+    description:
+      "A research project that integrates data from multiple ERP systems into a social network based knowledge graph users can query in plain language. Ali built the natural-language query layer with Python, LLMs and RAG; designed graph-based retrieval over ~40,000 business objects across 15 types, raising answer accuracy from 58% (plain vector RAG) to 84% on a 150-question evaluation set; cut hallucinated answers by ~60% with schema-aware prompts and answers grounded in graph paths with sources; built an evaluation pipeline with a golden dataset and LLM-as-judge scoring; and developed 5 Spring Boot services and 4 Vue.js views for exploring business objects.",
+    tags: [
+      "Python",
+      "LLMs",
+      "Graph-based RAG",
+      "Knowledge graphs",
+      "Spring Boot",
+      "Vue.js",
+    ],
+  },
   {
     name: "Al-Tabeeb",
     featured: true,
@@ -553,7 +590,6 @@ const projects = [
   },
   {
     name: "Nexmuv",
-    featured: true,
     group: "client",
     type: "Moving and logistics",
     summary:
@@ -594,17 +630,6 @@ const projects = [
       "Radix UI",
     ],
     url: "https://chainbox.ai/",
-  },
-  {
-    name: "SoNBO: Social Network of Business Objects",
-    group: "research",
-    type: "Universität Koblenz",
-    date: "2025 – present",
-    summary:
-      "Integrates data from several ERP systems into an explorable knowledge graph, with Spring Boot services and Vue.js visualizations.",
-    description:
-      "An approach to integrating and analyzing ERP data: a pipeline connects enterprise systems through adapters into a social network based knowledge graph, with Spring Boot services and Vue.js visualizations for exploring it.",
-    tags: ["Java", "Spring Boot", "Vue.js", "Knowledge graphs"],
   },
   {
     name: "Blockchain-based Healthcare Information System",
@@ -710,6 +735,12 @@ const certifications = [
     issuer: "HackerRank",
     date: null,
     url: "https://www.hackerrank.com/certificates/29638dec854a",
+  },
+  {
+    name: "Frontend Developer (React)",
+    issuer: "HackerRank",
+    date: null,
+    url: "https://www.hackerrank.com/certificates/04a6fffbf260",
   },
   {
     name: "Artificial Intelligence Essentials",

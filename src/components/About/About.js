@@ -4,7 +4,7 @@ import { focusAreas, profile, spokenLanguages } from "../../portfolio";
 import Section from "../Section";
 import "./About.css";
 
-const FOCUS_ICONS = [FiCode, FiCpu, FiDatabase];
+const FOCUS_ICONS = [FiCpu, FiCode, FiDatabase];
 
 export default function About() {
   return (
@@ -12,7 +12,7 @@ export default function About() {
       id="about"
       eyebrow="About"
       // Non-breaking hyphen keeps "full-stack" together when the title wraps.
-      title={"Full\u2011stack development with a focus on backend and AI"}
+      title={"Full\u2011stack development with a focus on generative AI"}
       alt
     >
       <div className="about__grid">
